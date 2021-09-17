@@ -376,6 +376,22 @@ class apiService {
     }
 
     /**
+         * API will save and continue the DBS section with status as signed and without File attached from admin login
+         */
+     saveAndContinueDBSSectionAdminSignedWithoutFileComplete () {
+        console.log("JoinPule Token: " + joinpulseAccessToken);
+        joindt_admin.patch('/')
+        .set('Accept', 'application/json')
+        .set('Authorization', `Bearer ${joinpulseAccessToken}`)
+        .send(dataServices.getDBSSectionInfoForAdminSignedWithoutFileComplete())
+        .expect(204)
+        .end((err, res) => {
+            if(err) return err;
+        });
+        console.log("Saved from Admin side...");
+    }
+
+    /**
      * API will save and continue the DBS section with status as signed and without File attached from admin login
      */
     saveAndContinueDBSSectionAdminSignedWithoutFile () {
@@ -384,6 +400,70 @@ class apiService {
         .set('Accept', 'application/json')
         .set('Authorization', `Bearer ${joinpulseAccessToken}`)
         .send(dataServices.getDBSSectionInfoForAdminSignedWithoutFile())
+        .expect(204)
+        .end((err, res) => {
+            if(err) return err;
+        });
+        console.log("Saved from Admin side...");
+    }
+
+    /**
+     * API will save and continue the DBS section with status as signed and without File attached from admin login
+     */
+     saveAndContinueDBSSectionAdminSignedWithoutFile66 () {
+        console.log("JoinPule Token: " + joinpulseAccessToken);
+        joindt_admin.patch('/')
+        .set('Accept', 'application/json')
+        .set('Authorization', `Bearer ${joinpulseAccessToken}`)
+        .send(dataServices.getDBSSectionInfoForAdminSignedWithoutFile66())
+        .expect(204)
+        .end((err, res) => {
+            if(err) return err;
+        });
+        console.log("Saved from Admin side...");
+    }
+
+    /**
+     * API will save and continue the DBS section with status as signed and without File attached from admin login
+     */
+     saveAndContinueDBSSectionAdminSignedWithoutFile55 () {
+        console.log("JoinPule Token: " + joinpulseAccessToken);
+        joindt_admin.patch('/')
+        .set('Accept', 'application/json')
+        .set('Authorization', `Bearer ${joinpulseAccessToken}`)
+        .send(dataServices.getDBSSectionInfoForAdminSignedWithoutFile55())
+        .expect(204)
+        .end((err, res) => {
+            if(err) return err;
+        });
+        console.log("Saved from Admin side...");
+    }
+
+    /**
+     * API will save and continue the DBS section with status as signed and without File attached from admin login
+     */
+     saveAndContinueDBSSectionAdminSignedWithoutFile99 () {
+        console.log("JoinPule Token: " + joinpulseAccessToken);
+        joindt_admin.patch('/')
+        .set('Accept', 'application/json')
+        .set('Authorization', `Bearer ${joinpulseAccessToken}`)
+        .send(dataServices.getDBSSectionInfoForAdminSignedWithoutFile99())
+        .expect(204)
+        .end((err, res) => {
+            if(err) return err;
+        });
+        console.log("Saved from Admin side...");
+    }
+
+    /**
+     * API will save and continue the DBS section with status as signed and without File attached from admin login
+     */
+     saveAndContinueDBSSectionAdminSignedWithoutFile88 () {
+        console.log("JoinPule Token: " + joinpulseAccessToken);
+        joindt_admin.patch('/')
+        .set('Accept', 'application/json')
+        .set('Authorization', `Bearer ${joinpulseAccessToken}`)
+        .send(dataServices.getDBSSectionInfoForAdminSignedWithoutFile88())
         .expect(204)
         .end((err, res) => {
             if(err) return err;

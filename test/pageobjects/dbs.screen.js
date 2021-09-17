@@ -4,6 +4,7 @@ global.tag = process.argv[3];
 class dbsScreen {
 
     dbsStatus = "";
+    certificate = "";
 
     // get dashboardLbl () { return $('//android.view.View[contains(@text, "Profile overview")]')}
     get pageHeaderLbl () { return $('//h1[@id="pageTitle"]')}
@@ -53,18 +54,27 @@ class dbsScreen {
         this.dbsQuestionNoRadioBtn.click();
     }
 
-    enterCertificateValue () {
+    enterCertificateValue (certificate) {
         this.certificateTxtBox.waitForExist({timeout: 60000});
         this.certificateTxtBox.scrollIntoView();
-        this.certificateTxtBox.setValue("009999999999");
-        driver.hideKeyboard();
-        browser.pause(1000);
-    }
-
-    enterCertificateValueForIssue () {
-        this.certificateTxtBox.waitForExist({timeout: 60000});
-        this.certificateTxtBox.scrollIntoView();
-        this.certificateTxtBox.setValue("007777777777");
+        switch(certificate){
+            case "Valid":
+                this.certificateTxtBox.setValue("009999999999");
+                break;
+            case "Issue77":
+                this.certificateTxtBox.setValue("007777777777");
+                break;
+            case "Issue66":
+                console.log("I am in 0066");
+                this.certificateTxtBox.setValue("006666666666");
+                break;
+            case "Issue55":
+                this.certificateTxtBox.setValue("005555555555");
+                break;
+            case "Issue88":
+                this.certificateTxtBox.setValue("008888888888");
+                break;
+        }
         driver.hideKeyboard();
         browser.pause(1000);
     }
@@ -137,6 +147,21 @@ class dbsScreen {
                 break;
             case "SignedWithoutFile":
                 expect(this.sectionMessage.getText()).to.equal("There seems to be an issue with your DBS, a member of the team will contact you shortly");
+                break;
+            case "SignedWithoutFile1":
+                expect(this.sectionMessage.getText()).to.equal("There seems to be an issue checking your DBS, please change your answer to no and use the next question to upload your DBS. A member of the team will then review  your DBS and contact you if necessary. ");
+                break;
+            case "SignedWithoutFile2":
+                expect(this.sectionMessage.getText()).to.equal("There seems to be an issue checking your DBS, please change your answer to no and use the next question to upload your DBS. A member of the team will then review  your DBS and contact you if necessary. ");
+                break;
+            case "SignedWithoutFile3":
+                expect(this.sectionMessage.getText()).to.equal("Thanks for submitting your DBS details; a member of the team will now review them. If approved, this section will change to ‘Complete’. In the meantime, you can continue filling in the rest of your profile.");
+                break;
+            case "SignedWithoutFile4":
+                expect(this.sectionMessage.getText()).to.equal("A member of the team will be in touch with you shortly ");
+                break;
+            case "Complete":
+                expect(this.sectionMessage.getText()).to.equal("Your DBS certificate has been issued. Please ensure you send us a clear copy as soon as you receive it.");
                 break;
         }
     }

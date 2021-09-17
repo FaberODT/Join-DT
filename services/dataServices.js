@@ -146,6 +146,56 @@ var DataServices = function() {
         }
     }
 
+    this.getDBSSectionInfoForAdminSignedWithoutFile99 = () => {
+        return {
+            "sections": [
+                {
+                    "id": "dbs",
+                    "values": {
+                        "TextSignDeclaration": [],
+                        "SignDeclarationStatus": ["Signed"],
+                        "DBSDetailsText": [],
+                        "DBSUpdateRegistered": ["DBSUpdateYes"],
+                        "DBSUpdateCertificateNumber": ["009999999999"],
+                        "DBSUpdateCertificate": [],
+                        "DBSUpdateCertificateDate": [],
+                        "DBSUpdateCheckDate": [],
+                        "DBSUpdateResult": ["DBSInvalidDetails"],
+                        "DBSRecheck": [],
+                        "DBSCriteriaMet": [],
+                        "DBSForceSectionStatus": [],
+                        "DBSUpdateComplete": []
+                    }
+                }
+            ]
+        }
+    }
+
+    this.getDBSSectionInfoForAdminSignedWithoutFile88 = () => {
+        return {
+            "sections": [
+                {
+                    "id": "dbs",
+                    "values": {
+                        "TextSignDeclaration": [],
+                        "SignDeclarationStatus": ["Signed"],
+                        "DBSDetailsText": [],
+                        "DBSUpdateRegistered": ["DBSUpdateYes"],
+                        "DBSUpdateCertificateNumber": ["008888888888"],
+                        "DBSUpdateCertificate": [],
+                        "DBSUpdateCertificateDate": [],
+                        "DBSUpdateCheckDate": [],
+                        "DBSUpdateResult": ["DBSInvalidDetails"],
+                        "DBSRecheck": [],
+                        "DBSCriteriaMet": [],
+                        "DBSForceSectionStatus": [],
+                        "DBSUpdateComplete": []
+                    }
+                }
+            ]
+        }
+    }
+
     this.getDBSSectionInfoForAdminSignedWithoutFile = () => {
         return {
             "sections": [
@@ -157,6 +207,76 @@ var DataServices = function() {
                         "DBSDetailsText": [],
                         "DBSUpdateRegistered": ["DBSUpdateYes"],
                         "DBSUpdateCertificateNumber": ["007777777777"],
+                        "DBSUpdateCertificate": [],
+                        "DBSUpdateCertificateDate": [],
+                        "DBSUpdateCheckDate": [],
+                        "DBSUpdateResult": ["DBSInvalidDetails"],
+                        "DBSRecheck": [],
+                        "DBSCriteriaMet": [],
+                        "DBSForceSectionStatus": [],
+                        "DBSUpdateComplete": []
+                    }
+                }
+            ]
+        }
+    }
+
+    this.getDBSSectionInfoForAdminSignedWithoutFileComplete = () => {
+        return {
+            "sections": [
+                {
+                    "id": "dbs",
+                    "values": {
+                        "TextSignDeclaration": [],
+                        "SignDeclarationStatus": ["FileError"],
+                        "DBSDetailsText": [],
+                        "DBSUpdateRegistered": ["DBSUpdateNo"],
+                        "DBSquestion": ["DBSCertificateNo"],
+                        "TextPreEmploymentChecks2": [],
+                        "DBSForceSectionStatus": ["MarkSectionComplete"],
+                        "DBSUpdateComplete": []
+                    }
+                }
+            ]
+        }
+    }
+
+    this.getDBSSectionInfoForAdminSignedWithoutFile66 = () => {
+        return {
+            "sections": [
+                {
+                    "id": "dbs",
+                    "values": {
+                        "TextSignDeclaration": [],
+                        "SignDeclarationStatus": ["Signed"],
+                        "DBSDetailsText": [],
+                        "DBSUpdateRegistered": ["DBSUpdateYes"],
+                        "DBSUpdateCertificateNumber": ["006666666666"],
+                        "DBSUpdateCertificate": [],
+                        "DBSUpdateCertificateDate": [],
+                        "DBSUpdateCheckDate": [],
+                        "DBSUpdateResult": ["DBSInvalidDetails"],
+                        "DBSRecheck": [],
+                        "DBSCriteriaMet": [],
+                        "DBSForceSectionStatus": [],
+                        "DBSUpdateComplete": []
+                    }
+                }
+            ]
+        }
+    }
+
+    this.getDBSSectionInfoForAdminSignedWithoutFile55 = () => {
+        return {
+            "sections": [
+                {
+                    "id": "dbs",
+                    "values": {
+                        "TextSignDeclaration": [],
+                        "SignDeclarationStatus": ["Signed"],
+                        "DBSDetailsText": [],
+                        "DBSUpdateRegistered": ["DBSUpdateYes"],
+                        "DBSUpdateCertificateNumber": ["005555555555"],
                         "DBSUpdateCertificate": [],
                         "DBSUpdateCertificateDate": [],
                         "DBSUpdateCheckDate": [],
