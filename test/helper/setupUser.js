@@ -8,11 +8,14 @@ var expect = require('chai').expect,
   import_user = supertest("https://e2e-dt-api.joinpulse.co.uk/profile-management-core/v0/import-profile/f7018701-774d-4be6-8ca2-fafd8482ea5c"),
   joindt_fileUpload = supertest("https://e2e-dt-api.joinpulse.co.uk/profile-management-core/v1/my-profile"),
   joindt_admin = supertest("https://e2e-dt-api.joinpulse.co.uk/profile-management-core/v1/profiles/f7018701-774d-4be6-8ca2-fafd8482ea5c"),
-  fabAccessToken = "", fabAccessTokenForUser = "", joinpulseAccessToken = "", joinpulseAccessTokenForUser = "", fileUpload_responce = [], fileUpload_responce1 = [], fileUpload_responce_DBS = [], fileUpload_incorporation_kin = [], fileUpload_business_kin = [],
+  fabAccessToken = "", fabAccessTokenForUser = "", joinpulseAccessToken = "", joinpulseAccessTokenForUser = "", fileUpload_responce = [], fileUpload_responce1 = [], fileUpload_responce_DBS = [], fileUpload_professional = [], fileUpload_professional_qualification = [], fileUpload_insurance = [], fileUpload_incorporation_kin = [], fileUpload_business_kin = [],
   fileUpload_RWC1 = [], fileUpload_RWC2 = [], fileUpload_RWC3 = [], fileUpload_RWC4 = [];
   
 trainingCertificates = [];
 dbsCertificates = [];
+professionalDetail = [];
+professionalQualification = [];
+professionalInsurance = [];
 incorporationCertiKin = [];
 businessCertiKin = []; 
 rightToWorkChecks1 = [];
@@ -234,9 +237,9 @@ class apiService {
     /**
      * API will upload Supporting file 1 for Right to Work Checks section
      */
-    uploadFile1ForRightToWorkChecksSection() {
+    uploadFile1ForIdentificationDocumentsSection() {
         console.log("Joinpulse Auth token is: " + joinpulseAccessToken);
-        joindt_fileUpload.post('/files/RightToWorkUKPassport')
+        joindt_fileUpload.post('/files/RightToWorkEUUKPassport')
         .set('Authorization', `Bearer ${joinpulseAccessToken}`)
         .attach('file', process.cwd() + "/app/test.png")
         .expect(200)
@@ -254,7 +257,7 @@ class apiService {
     /**
      * API will upload Supporting file 2 for Right to Work Checks section
      */
-    uploadFile2ForRightToWorkChecksSection() {
+    uploadFile2ForIdentificationDocumentsSection() {
         joindt_fileUpload.post('/files/ProofOfAddressBankStatement' + `?stagingId=${rightToWorkChecks1[0][3]}`)
         .set('Authorization', `Bearer ${joinpulseAccessToken}`)
         .attach('file', process.cwd() + "/app/test.png")
@@ -273,7 +276,7 @@ class apiService {
     /**
      * API will upload Supporting file 3 for Right to Work Checks section
      */
-    uploadFile3ForRightToWorkChecksSection() {
+    uploadFile3ForIdentificationDocumentsSection() {
         joindt_fileUpload.post('/files/ProofOfAddress2UtilityBill' + `?stagingId=${rightToWorkChecks2[0][3]}`)
         .set('Authorization', `Bearer ${joinpulseAccessToken}`)
         .attach('file', process.cwd() + "/app/test.png")
@@ -324,6 +327,80 @@ class apiService {
         });
     }
 
+    /**
+     * API will upload the CV for professional details
+     */
+    uploadCVForProfessionalDetailsSection() {
+        console.log("Joinpulse bearer token value: " + joinpulseAccessToken);
+        joindt_fileUpload.post('/files/CV')
+        .set('Authorization', `Bearer ${joinpulseAccessToken}`)
+        .attach('file', process.cwd() + "/app/test.png")
+        .expect(200)
+        .end((err, res) => {
+            fileUpload_professional[0] = res.body.file.fileName;
+            fileUpload_professional[1] = res.body.file.fileSizeBytes;
+            fileUpload_professional[2] = res.body.file.dateCreated;
+            fileUpload_professional[3] = res.body.stagingId;
+            professionalDetail.push(fileUpload_professional);
+            console.log("Uploaded CV: " + fileUpload_professional);
+            if(err) return err;
+        });
+    }
+
+    /**
+     * API will upload profession qualic=fication certificate
+     */
+    uploadForProfessionalQualificationCerti() {
+        console.log("Staging id from uploaded CV: " + professionalDetail[0][3]);
+        joindt_fileUpload.post('/files/HigherEducationCertificate' + `?stagingId=${professionalDetail[0][3]}`)
+        .set('Authorization', `Bearer ${joinpulseAccessToken}`)
+        .attach('file', process.cwd() + "/app/test.png")
+        .expect(200)
+        .end((err, res) => {
+            fileUpload_professional_qualification[0] = res.body.file.fileName;
+            fileUpload_professional_qualification[1] = res.body.file.fileSizeBytes;
+            fileUpload_professional_qualification[2] = res.body.file.dateCreated;
+            fileUpload_professional_qualification[3] = res.body.stagingId;
+            professionalQualification.push(fileUpload_professional_qualification);
+            console.log("Uploaded qualification certificate: " + fileUpload_professional_qualification);
+            if(err) return err;
+        });
+    }
+
+    /**
+     * API will upload professional indemnity insurance
+     */
+    uploadForIndemnityInsurance() {
+        console.log("Staging id from uploaded CV: " + professionalQualification[0][3]);
+        joindt_fileUpload.post('/files/ProfessionalIndemnity' + `?stagingId=${professionalQualification[0][3]}`)
+        .set('Authorization', `Bearer ${joinpulseAccessToken}`)
+        .attach('file', process.cwd() + "/app/test.png")
+        .expect(200)
+        .end((err, res) => {
+            fileUpload_insurance[0] = res.body.file.fileName;
+            fileUpload_insurance[1] = res.body.file.fileSizeBytes;
+            fileUpload_insurance[2] = res.body.file.dateCreated;
+            fileUpload_insurance[3] = res.body.stagingId;
+            professionalInsurance.push(fileUpload_insurance);
+            console.log("Uploaded qualification certificate: " + fileUpload_insurance);
+            if(err) return err;
+        });
+    }
+
+    /**
+     * API will save and continue professional details section
+     */
+    saveAndContinueProfessionalDetails() {
+        joindt_fileUpload.patch(`?stagingId=${fileUpload_insurance[0][3]}`)
+        .set('Accept', 'application/json')
+        .set('Authorization', `Bearer ${joinpulseAccessToken}`)
+        .send(dataServices.getProfessionalDetails())
+        .expect(204)
+        .end((err, res) => {
+            console.log("I have saved everything now...");
+            if(err) return err;
+        });
+    }
 
     /**
      * API will upload the certificate for DBS section

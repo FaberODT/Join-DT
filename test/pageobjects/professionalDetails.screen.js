@@ -1,7 +1,7 @@
 const expect = require("chai").expect;
 global.tag = process.argv[3];
 
-class rightToWorkChecksScreen {
+class professionalDetailsScreen {
 
     get pageHeaderLbl () { return $('//h1[@id="pageTitle"]')}
 
@@ -9,11 +9,9 @@ class rightToWorkChecksScreen {
 
     get sectionStatus () { return $('//div[@id="statusMessageHeader"]/span')}
 
-    
-
-    assertRightToWorkChecksPageHeader () {
+    assertIdentificationDocumentsPageHeader () {
         this.pageHeaderLbl.waitForExist({timeout: 60000});
-        expect(this.pageHeaderLbl.getText()).to.equal("6. Right to work checks");
+        expect(this.pageHeaderLbl.getText()).to.equal("5. Professional details");
     }
 
     clickOnSaveAndContinueBtn () {
@@ -28,4 +26,4 @@ class rightToWorkChecksScreen {
 
     
 }
-module.exports = new rightToWorkChecksScreen();
+module.exports = new professionalDetailsScreen();

@@ -10,6 +10,10 @@ describe('verify the DBS section', () => {
     afterEach('Logout functions only', () => {
         //following will perform logout operation
         sectionScreen.clickOnMenuBtn();
+        //following will click on Profile menu option
+        sectionScreen.clickOnProfileMenuOption();
+
+        //following will click on Logout option
         sectionScreen.clickOnLogoutBtn();
 
         //following will assert login screen

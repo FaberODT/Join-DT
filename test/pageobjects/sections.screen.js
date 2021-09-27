@@ -9,6 +9,8 @@ class sectionScreen {
 
     get personalDetailsSection  () { return $('//div[@id="navigation-section-list-item-personal-details"]')}
 
+    get professionalDetailsSection () { return $('//div[@id="navigation-section-list-item-work-history-and-qualifications"]')}
+
     get gradeAndEmployerSection () { return $('//div[@id="navigation-section-list-item-grade-and-employer"]')}
 
     get generalNurseDetailsSection () { return $('//div[@id="navigation-section-list-item-general-nurse-details"]')}
@@ -23,7 +25,7 @@ class sectionScreen {
 
     get referenceSection () { return $('//div[@id="navigation-section-list-item-references"]')}
 
-    get rightToWorkChecksSection () { return $('//div[@id="navigation-section-list-item-right-to-work-checks"]')}
+    get identificationDocumentSection () { return $('//div[@id="navigation-section-list-item-identification-documents"]')}
 
     get logoutBtn () { return $('//button[@id="nav-item-logout"]')}
 
@@ -55,6 +57,11 @@ class sectionScreen {
     clickOnPersonalDetailsSection () { 
         this.personalDetailsSection.waitForExist({timeout: 60000});
         this.personalDetailsSection.click();
+    }
+
+    clickOnProfessionalDetailsSection () {
+        this.professionalDetailsSection.waitForExist({timeout: 60000});
+        this.professionalDetailsSection.click();
     }
 
     clickOnGradeAndEmployerSection () { 
@@ -99,9 +106,9 @@ class sectionScreen {
         this.referenceSection.click();
     }
 
-    clickOnRightToWorkChecksSection () {
-        this.rightToWorkChecksSection.waitForExist({timeout: 60000});
-        this.rightToWorkChecksSection.click();
+    clickOnIdentificationDocumentSection () {
+        this.identificationDocumentSection.waitForExist({timeout: 60000});
+        this.identificationDocumentSection.click();
     }
 }
 module.exports = new sectionScreen();

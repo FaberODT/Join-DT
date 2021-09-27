@@ -119,6 +119,43 @@ var DataServices = function() {
         }
     }
 
+    this.getProfessionalDetails = () => {
+        return {
+            "sections": [
+                {
+                    "id": "work-history-and-qualifications",
+                    "values": {
+                        "WorkHistoryAdditional": [],
+                        "CV": [
+                            {
+                                "fileName": `${professionalDetail[0][0]}`,
+                                "fileSizeBytes": `${professionalDetail[0][1]}`,
+                                "dateCreated": `${professionalDetail[0][2]}`
+                            }
+                        ],
+                        "HigherEducationCertificate": [
+                            {
+                                "fileName": `${professionalQualification[0][0]}`,
+                                "fileSizeBytes": `${professionalQualification[0][1]}`,
+                                "dateCreated": `${professionalQualification[0][2]}`
+                            }
+                        ],
+                        "Profbodyaccreditation": [
+                            "No"
+                        ],
+                        "ProfessionalIndemnity": [
+                            {
+                                "fileName": `${professionalInsurance[0][0]}`,
+                                "fileSizeBytes": `${professionalInsurance[0][1]}`,
+                                "dateCreated": `${professionalInsurance[0][2]}`
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+
     this.getDBSSectionInfoForAdminSignedWithFile = () => {
         return {
             "sections": [
@@ -353,62 +390,42 @@ var DataServices = function() {
 
     this.getRightToWorkChecksInfo = () => {
         return {
-                    "sections": [
-                        {
-                            "id": "right-to-work-checks",
-                            "values": {
-                                "TextPreEmploymentChecks": [
-                                    ""
-                                ],
-                                "RightToWorkSelection": [
-                                    "RightToWorkUKPassport"
-                                ],
-                                "TextProofOfAddress": [
-                                    ""
-                                ],
-                                "ProofOfAddress1": [
-                                    "ProofOfAddressBankStatement"
-                                ],
-                                "ProofOfAddress2Select": [
-                                    "ProofOfAddress2UtilityBill"
-                                ],
-                                "TextProofOfNameChange": [
-                                    ""
-                                ],
-                                "NameChangeSelection": [
-                                    "No"
-                                ],
-                                "RightToWorkConsent": [
-                                    true
-                                ],
-                                "TextSignDeclaration": [
-                                    ""
-                                ],
-                                "RightToWorkUKPassport": [
-                                    {
-                                        "fileName": `${rightToWorkChecks1[0][0]}`,
-                                        "fileSizeBytes": `${rightToWorkChecks1[0][1]}`,
-                                        "dateCreated": `${rightToWorkChecks1[0][2]}`
-                                    }
-                                ],
-                                "ProofOfAddressBankStatement": [
-                                    {
-                                        "fileName": `${rightToWorkChecks2[0][0]}`,
-                                        "fileSizeBytes": `${rightToWorkChecks2[0][1]}`,
-                                        "dateCreated": `${rightToWorkChecks2[0][2]}`
-                                    }
-                                ],
-                                "ProofOfAddress2UtilityBill": [
-                                    {
-                                        "fileName": `${rightToWorkChecks3[0][0]}`,
-                                        "fileSizeBytes": `${rightToWorkChecks3[0][1]}`,
-                                        "dateCreated": `${rightToWorkChecks3[0][2]}`
-                                    }
-                                ]
+            "sections": [
+                {
+                    "id": "identification-documents",
+                    "values": {
+                        "TextPreEmploymentChecks": [],
+                        "RightToWorkSelection": ["RightToWorkEUUKPassport"],
+                        "TextProofOfAddress": [],
+                        "ProofOfAddress1": ["ProofOfAddressBankStatement"],
+                        "ProofOfAddress2Select": ["ProofOfAddress2UtilityBill"],
+                        "TextProofOfNameChange": [],
+                        "NameChangeSelection": ["No"],
+                        "RightToWorkUKPassport": [
+                            {
+                                "fileName": `${rightToWorkChecks1[0][0]}`,
+                                "fileSizeBytes": `${rightToWorkChecks1[0][1]}`,
+                                "dateCreated": `${rightToWorkChecks1[0][2]}`
                             }
-                        }
-                    ]
+                        ],
+                        "ProofOfAddressBankStatement": [
+                            {
+                                "fileName": `${rightToWorkChecks2[0][0]}`,
+                                "fileSizeBytes": `${rightToWorkChecks2[0][1]}`,
+                                "dateCreated": `${rightToWorkChecks2[0][2]}`
+                            }
+                        ],
+                        "ProofOfAddress2UtilityBill": [
+                            {
+                                "fileName": `${rightToWorkChecks3[0][0]}`,
+                                "fileSizeBytes": `${rightToWorkChecks3[0][1]}`,
+                                "dateCreated": `${rightToWorkChecks3[0][2]}`
+                            }
+                        ]
+                    }
                 }
+            ]
+        }
     }
 };
 
