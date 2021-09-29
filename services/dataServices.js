@@ -120,6 +120,9 @@ var DataServices = function() {
     }
 
     this.getProfessionalDetails = () => {
+        console.log("value of 1st certificate: " + professionalDetail[0][0]);
+        console.log("value of 2nd certificate: " + professionalQualification[0][0]);
+        console.log("value of 3rd certificate: " + professionalInsurance[0][0]);
         return {
             "sections": [
                 {

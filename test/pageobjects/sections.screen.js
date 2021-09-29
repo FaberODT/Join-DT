@@ -27,6 +27,8 @@ class sectionScreen {
 
     get identificationDocumentSection () { return $('//div[@id="navigation-section-list-item-identification-documents"]')}
 
+    get termsAndConditionsSection () { return $('//div[@id="navigation-section-list-item-terms-and-conditions"]')}
+
     get logoutBtn () { return $('//button[@id="nav-item-logout"]')}
 
     get discardChangesBtn () { return $('//button[@id="discard-changes-button"]')}
@@ -99,6 +101,11 @@ class sectionScreen {
     clickOnDBSDetailsSection () {
         this.dbsDetailsSection.waitForExist({timeout: 60000});
         this.dbsDetailsSection.click();
+    }
+
+    clickOnTermsSndConditionsSection () {
+        this.termsAndConditionsSection.waitForExist({timeout: 60000});
+        this.termsAndConditionsSection.click();
     }
 
     clickOnReferenceSection () {

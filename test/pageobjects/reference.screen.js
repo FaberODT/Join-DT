@@ -35,7 +35,7 @@ class referenceScreen {
 
     assertReferencePageHeader () {
         this.pageHeaderLbl.waitForExist({timeout: 60000});
-        expect(this.pageHeaderLbl.getText()).to.equal("8. References");
+        expect(this.pageHeaderLbl.getText()).to.equal("6. References");
     }
 
     clickOnSaveAndContinueBtn () {
@@ -50,117 +50,94 @@ class referenceScreen {
 
     enterValueForRefName1 () {
         this.refName1.waitForExist({timeout: 60000});
+        this.refName1.scrollIntoView();
         this.refName1.setValue("Rio");
     }
 
     enterValueForRefName2 () {
         this.refName2.waitForExist({timeout: 60000});
+        this.refName2.scrollIntoView();
         this.refName2.setValue("Denver");
     }
 
     enterValueForEmail1 () {
+        this.refEmail1.waitForExist({timeout: 60000});
         this.refEmail1.scrollIntoView();
         browser.pause(1000);
-        this.refEmail1.waitForExist({timeout: 60000});
         this.refEmail1.setValue("rio@test.com");
     }
     
     enterValueForEmail2 () {
+        this.refEmail2.waitForExist({timeout: 60000});
         this.refEmail2.scrollIntoView();
         browser.pause(1000);
-        this.refEmail2.waitForExist({timeout: 60000});
         this.refEmail2.setValue("denver@test.com");
     }
 
     enterValueForJobTitle1() {
         this.refJobTitle1.waitForExist({timeout: 60000});
+        this.refJobTitle1.scrollIntoView();
         this.refJobTitle1.setValue("Senior");
     }
     
     enterValueForJobTitle2() {
         this.refJobTitle2.waitForExist({timeout: 60000});
+        this.refJobTitle2.scrollIntoView();
         this.refJobTitle2.setValue("Senior");
     }
 
     enterValueForEmployer1() {
         this.refEmployer1.waitForExist({timeout: 60000});
+        this.refEmployer1.scrollIntoView();
         this.refEmployer1.setValue("PMC");
     }
     
     enterValueForEmployer2() {
         this.refEmployer2.waitForExist({timeout: 60000});
+        this.refEmployer2.scrollIntoView();
         this.refEmployer2.setValue("PMC");
     }
 
     enterValueForDateFrom1 () {
+        this.refFrom1.waitForExist({timeout: 60000});
         this.refFrom1.scrollIntoView();
         browser.pause(1000);
-        this.refFrom1.waitForExist({timeout: 60000});
-        this.refFrom1.setValue("01011991");
+        this.refFrom1.setValue("012004");
     }
     
     enterValueForDateFrom2 () {
+        this.refFrom2.waitForExist({timeout: 60000});
         this.refFrom2.scrollIntoView();
         browser.pause(1000);
-        this.refFrom2.waitForExist({timeout: 60000});
-        this.refFrom2.setValue("01011993");
+        this.refFrom2.setValue("012005");
     }
 
     enterValueForDateTo1 () {
         this.refTo1.waitForExist({timeout: 60000});
-        this.refTo1.setValue("01011992");
+        this.refTo1.scrollIntoView();
+        this.refTo1.setValue("012006");
     }
 
     enterValueForDateTo2 () {
         this.refTo2.waitForExist({timeout: 60000});
-        this.refTo2.setValue("01011994");
+        this.refTo2.scrollIntoView();
+        this.refTo2.setValue("012009");
     }
 
     fillOutReference1 () {
         this.enterValueForRefName1();
-        browser.hideKeyboard();
-        browser.pause(1000);``
-        // browser.touchAction([
-        //     { action: 'press', x: 700, y: 2200 },
-        //     { action: 'moveTo', x: 700, y: 600 },
-        //     'release'
-        // ]);
         this.enterValueForEmail1();
         this.enterValueForJobTitle1();
         this.enterValueForEmployer1();
-        browser.hideKeyboard();
-        browser.pause(1000);
-        // browser.touchAction([
-        //     { action: 'press', x: 700, y: 2200 },
-        //     { action: 'moveTo', x: 700, y: 600 },
-        //     'release'
-        // ]);
-        // browser.pause(1000);
         this.enterValueForDateFrom1();
         this.enterValueForDateTo1();
     }
     
     fillOutReference2 () {
         this.enterValueForRefName2();
-        browser.hideKeyboard();
-        browser.pause(1000);
-        // browser.touchAction([
-        //     { action: 'press', x: 700, y: 2200 },
-        //     { action: 'moveTo', x: 700, y: 600 },
-        //     'release'
-        // ]);
-        // browser.pause(1000);
         this.enterValueForEmail2();
         this.enterValueForJobTitle2();
         this.enterValueForEmployer2();
-        browser.hideKeyboard();
-        browser.pause(1000);
-        // browser.touchAction([
-        //     { action: 'press', x: 700, y: 2200 },
-        //     { action: 'moveTo', x: 700, y: 600 },
-        //     'release'
-        // ]);
-        // browser.pause(1000);
         this.enterValueForDateFrom2();
         this.enterValueForDateTo2();
     }

@@ -4,9 +4,9 @@ const apiScreen = require('../helper/setupUser');
 const loginScreen = require('../pageobjects/login.screen');
 const dashboardScreen = require('../pageobjects/dashBoard.screen');
 const sectionScreen = require('../pageobjects/sections.screen');
-const refereneScreen = require('../pageobjects/reference.screen');
+const termsAndConditionScreen = require('../pageobjects/termsAndConditions.screen');
 
-describe('verify the reference screen of Join-DT', () => {
+describe('verify the Terms and Conditions screen of Join-DT', () => {
     afterEach('Logout functions only', () => {
         //following will perform logout operation
         sectionScreen.clickOnMenuBtn();
@@ -20,7 +20,7 @@ describe('verify the reference screen of Join-DT', () => {
         loginScreen.assertLoginScreen();
     });
 
-    it('Verify details of Reference section', () => {
+    it('Verify details of Terms and Conditions section', () => {
         // //following will open browser and load the url
         browser.url(process.env.E2EPORTAL);
 
@@ -33,34 +33,31 @@ describe('verify the reference screen of Join-DT', () => {
         sectionScreen.clickOnMenuBtn();
         sectionScreen.clickOnProfileMenuOption();
 
-        //following will click on Peronal Details section 
-        sectionScreen.clickOnReferenceSection();
+        //following will click on Terms and Conditions section 
+        sectionScreen.clickOnTermsSndConditionsSection();
         browser.pause(5000);
 
         //following will assert the section heading of Reference section
-        refereneScreen.assertReferencePageHeader();
+        termsAndConditionScreen.assertTermsAndConditionsPageHeader();
 
-        //following will fill out fileds of Reference 1
-        refereneScreen.fillOutReference1();
-
-        //following will fill out fields of Reference 2
-        refereneScreen.fillOutReference2();
+        //following will fill out the next of kin details
+        termsAndConditionScreen.fillNextOfKin();
 
         //following will click on Save and Continue button
-        refereneScreen.clickOnSaveAndContinueBtn();
+        termsAndConditionScreen.clickOnSaveAndContinueBtn();
         browser.pause(5000);
 
         //following will click on Menu button (hamburger menu)
         sectionScreen.clickOnMenuBtn();
 
         //following will click on Peronal Details section 
-        sectionScreen.clickOnReferenceSection();
+        sectionScreen.clickOnTermsSndConditionsSection();
         browser.pause(5000);
 
-        //following will assert the section heading of Reference section
-        refereneScreen.assertReferencePageHeader();
+        //following will assert the section heading of Terms and Conditions section
+        termsAndConditionScreen.assertTermsAndConditionsPageHeader();
 
-        //following will assert status of the References page
-        refereneScreen.assertSectionStatus();
+        //following will assert status of the Terms and Conditions page
+        termsAndConditionScreen.assertSectionStatus();
     });
 });

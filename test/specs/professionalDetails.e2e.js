@@ -6,7 +6,7 @@ const dashboardScreen = require('../pageobjects/dashBoard.screen');
 const sectionScreen = require('../pageobjects/sections.screen');
 const professionalDetailsScreen = require('../pageobjects/professionalDetails.screen');
 
-describe('verify the identification documents section', () => {
+describe('verify the Professional details section', () => {
 
     afterEach('Logout functions only', () => {
         //following will perform logout operation
@@ -21,16 +21,16 @@ describe('verify the identification documents section', () => {
         loginScreen.assertLoginScreen();
     });
 
-    it('to verify the details of identification documents section', () => {
+    it('to verify the details of professional details section', () => {
         //following will open browser and load the url
         browser.url(process.env.E2EPORTAL);
 
         //following will fetch the acacium Auth Token
-        apiScreen.getFaberAuthToken();
+        apiScreen.getFaberAuthTokenForUser();
         browser.pause(5000);
 
         //following will fetch the JoinPulse Auth token
-        apiScreen.getJoinDTAuthToken();
+        apiScreen.getJoinDTAuthTokenForUser();
         browser.pause(5000);
 
         //following will upload file 1 
@@ -44,17 +44,18 @@ describe('verify the identification documents section', () => {
         //following will upload file 3
         apiScreen.uploadForIndemnityInsurance();
         browser.pause(10000);
-
+        
         //following will perform login 
         loginScreen.loginIntoSite(process.env.USER, process.env.PASSWORD);
 
-        //following will save and continue the Identification documents section
+        //following will save and continue the professional details section
         apiScreen.saveAndContinueProfessionalDetails();
-        browser.pause(25000);
-        
+        browser.pause(20000);
+
         //following will assert dashboard screen
         dashboardScreen.assertDashboardLbl();
         
+        //following will click on Menu button - hamburger menu icon
         sectionScreen.clickOnMenuBtn();
         sectionScreen.clickOnProfileMenuOption();
 
