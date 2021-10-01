@@ -59,31 +59,37 @@ class sectionScreen {
     clickOnPersonalDetailsSection () { 
         this.personalDetailsSection.waitForExist({timeout: 60000});
         this.personalDetailsSection.click();
+        browser.pause(2000);
     }
 
     clickOnProfessionalDetailsSection () {
         this.professionalDetailsSection.waitForExist({timeout: 60000});
         this.professionalDetailsSection.click();
+        browser.pause(2000);
     }
 
     clickOnGradeAndEmployerSection () { 
         this.gradeAndEmployerSection.waitForExist({timeout: 60000});
         this.gradeAndEmployerSection.click();
+        browser.pause(2000);
     }
 
     clickOnGeneralNurseDetailsSection () { 
         this.generalNurseDetailsSection.waitForExist({timeout: 60000});
         this.generalNurseDetailsSection.click();
+        browser.pause(2000);
     }
 
     clickOnNMCSection () {
         this.nmcSection.waitForExist({timeout: 60000});
         this.nmcSection.click();
+        browser.pause(2000);
     }
 
     clickOnTrainingSection () {
         this.trainingSection.waitForExist({timeout: 60000});
         this.trainingSection.click();
+        browser.pause(2000);
     }
 
     clickOnTaxAndNextOfKinSection () { 
@@ -96,26 +102,31 @@ class sectionScreen {
         browser.pause(1000);
         this.taxAndNextOfKinSection.waitForExist({timeout: 60000});
         this.taxAndNextOfKinSection.click();
+        browser.pause(2000);
     }
 
     clickOnDBSDetailsSection () {
         this.dbsDetailsSection.waitForExist({timeout: 60000});
         this.dbsDetailsSection.click();
+        browser.pause(2000);
     }
 
     clickOnTermsSndConditionsSection () {
         this.termsAndConditionsSection.waitForExist({timeout: 60000});
         this.termsAndConditionsSection.click();
+        browser.pause(2000);
     }
 
     clickOnReferenceSection () {
         this.referenceSection.waitForExist({timeout: 60000});
         this.referenceSection.click();
+        browser.pause(2000);
     }
 
     clickOnIdentificationDocumentSection () {
         this.identificationDocumentSection.waitForExist({timeout: 60000});
         this.identificationDocumentSection.click();
+        browser.pause(2000);
     }
 }
 module.exports = new sectionScreen();

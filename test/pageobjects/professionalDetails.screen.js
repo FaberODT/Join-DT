@@ -9,6 +9,20 @@ class professionalDetailsScreen {
 
     get sectionStatus () { return $('//div[@id="statusMessageHeader"]/span')}
 
+    get yesRadioBtn () { return $('//section[@id="Profbodyaccreditation"]/label[1]/span')}
+
+    get babcpRadioBtn () { return $('//section[@id="Profbodymembership"]/label[1]/span')}
+
+    get bacpRadioBtn () { return $('//section[@id="Profbodymembership"]/label[2]/span')}
+
+    get hcpcRadioBtn () { return $('//section[@id="Profbodymembership"]/label[3]/span')}
+
+    get otherRadioBtn () { return $('//section[@id="Profbodymembership"]/label[4]/span')}
+
+    get otherProfessionalTxtBox () { return $('//input[@id="OtherProfBody"]')}
+
+    get professionalMembershipTxtBox () { return $('//input[@id="HCPCProfnumber"]')}
+
     assertIdentificationDocumentsPageHeader () {
         this.pageHeaderLbl.waitForExist({timeout: 60000});
         expect(this.pageHeaderLbl.getText()).to.equal("5. Professional details");
@@ -23,7 +37,55 @@ class professionalDetailsScreen {
         this.sectionStatus.waitForExist({timeout: 60000});
         expect(this.sectionStatus.getText()).to.equal("Complete");
     }
+    clickOnYesRadioBtn () {
+        this.yesRadioBtn.waitForExist({timeout: 60000});
+        this.yesRadioBtn.scrollIntoView();
+        this.yesRadioBtn.click();
+        browser.pause(1000);
+    }
 
+    clickOnBABCPRadioBtn () {
+        this.babcpRadioBtn.waitForExist({timeout: 60000});
+        this.babcpRadioBtn.scrollIntoView();
+        this.babcpRadioBtn.click();
+    }
+
+    clickOnBACPRadioBtn () {
+        this.bacpRadioBtn.waitForExist({timeout: 60000});
+        this.professionalMembershipTxtBox.scrollIntoView();
+        browser.pause(500);
+        this.bacpRadioBtn.scrollIntoView();
+        this.bacpRadioBtn.click();
+    }
+
+    clickOnHCPCRadioBtn () {
+        this.hcpcRadioBtn.waitForExist({timeout: 60000});
+        this.professionalMembershipTxtBox.scrollIntoView();
+        browser.pause(500);
+        this.hcpcRadioBtn.scrollIntoView();
+        this.hcpcRadioBtn.click();
+    }
     
+    clickOnOtherRadioBtn () {
+        this.otherRadioBtn.waitForExist({timeout: 60000});
+        this.professionalMembershipTxtBox.scrollIntoView();
+        browser.pause(500);
+        this.otherRadioBtn.scrollIntoView();
+        this.otherRadioBtn.click();
+    }
+
+    enterValueForOtherProfessional () {
+        this.otherProfessionalTxtBox.waitForExist({timeout: 60000});
+        this.otherProfessionalTxtBox.scrollIntoView();
+        this.otherProfessionalTxtBox.setValue("123456789");
+        browser.pause(500);
+    }
+
+    enterValueForProfessionalMemberships () {
+        this.professionalMembershipTxtBox.waitForExist({timeout: 60000});
+        this.professionalMembershipTxtBox.scrollIntoView();
+        this.professionalMembershipTxtBox.setValue("123456789");
+        browser.pause(500);
+    }
 }
 module.exports = new professionalDetailsScreen();

@@ -18,7 +18,7 @@ config.capabilities = [
 ];
 
 config.specs = [
-    './test/specs/**/termsAndConditions.e2e.js'
+    './test/specs/**/professionalDetails.e2e.js'
 ];
 
 // config.suites = {
