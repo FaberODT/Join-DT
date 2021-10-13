@@ -33,6 +33,32 @@ class referenceScreen {
 
     get refTo2 () { return $('//input[@id="Reference-1-ReferencePeriodEndDate"]')}
 
+    get refName3 () { return $('//input[@id="Reference-2-RefereeName"]')}
+
+    get refEmail3 () { return $('//input[@id="Reference-2-RefereeWorkEmailAddress"]')}
+
+    get refJobTitle3 () { return $('//input[@id="Reference-2-JobTitle"]')}
+
+    get refEmployer3 () { return $('//input[@id="Reference-2-Employer"]')}
+
+    get refFrom3 () { return $('//input[@id="Reference-2-ReferencePeriodStartDate"]')}
+
+    get refTo3 () { return $('//input[@id="Reference-2-ReferencePeriodEndDate"]')}
+
+    get refName4 () { return $('//input[@id="Reference-3-RefereeName"]')}
+
+    get refEmail4 () { return $('//input[@id="Reference-3-RefereeWorkEmailAddress"]')}
+
+    get refJobTitle4 () { return $('//input[@id="Reference-3-JobTitle"]')}
+
+    get refEmployer4 () { return $('//input[@id="Reference-3-Employer"]')}
+
+    get refFrom4 () { return $('//input[@id="Reference-3-ReferencePeriodStartDate"]')}
+
+    get refTo4 () { return $('//input[@id="Reference-3-ReferencePeriodEndDate"]')}
+
+    get addAnotherBtn () { return $('//button[@id="add-Reference"]')}
+
     assertReferencePageHeader () {
         this.pageHeaderLbl.waitForExist({timeout: 60000});
         expect(this.pageHeaderLbl.getText()).to.equal("6. References");
@@ -60,6 +86,18 @@ class referenceScreen {
         this.refName2.setValue("Denver");
     }
 
+    enterValueForRefName3 () {
+        this.refName3.waitForExist({timeout: 60000});
+        this.refName3.scrollIntoView();
+        this.refName3.setValue("Tokyo");
+    }
+
+    enterValueForRefName4 () {
+        this.refName4.waitForExist({timeout: 60000});
+        this.refName4.scrollIntoView();
+        this.refName4.setValue("Nairobi");
+    }
+
     enterValueForEmail1 () {
         this.refEmail1.waitForExist({timeout: 60000});
         this.refEmail1.scrollIntoView();
@@ -74,6 +112,20 @@ class referenceScreen {
         this.refEmail2.setValue("denver@test.com");
     }
 
+    enterValueForEmail3 () {
+        this.refEmail3.waitForExist({timeout: 60000});
+        this.refEmail3.scrollIntoView();
+        browser.pause(1000);
+        this.refEmail3.setValue("tokyp@test.com");
+    }
+
+    enterValueForEmail4 () {
+        this.refEmail4.waitForExist({timeout: 60000});
+        this.refEmail4.scrollIntoView();
+        browser.pause(1000);
+        this.refEmail4.setValue("nairobi@test.com");
+    }
+
     enterValueForJobTitle1() {
         this.refJobTitle1.waitForExist({timeout: 60000});
         this.refJobTitle1.scrollIntoView();
@@ -84,6 +136,18 @@ class referenceScreen {
         this.refJobTitle2.waitForExist({timeout: 60000});
         this.refJobTitle2.scrollIntoView();
         this.refJobTitle2.setValue("Senior");
+    }
+
+    enterValueForJobTitle3() {
+        this.refJobTitle3.waitForExist({timeout: 60000});
+        this.refJobTitle3.scrollIntoView();
+        this.refJobTitle3.setValue("Senior");
+    }
+
+    enterValueForJobTitle4() {
+        this.refJobTitle4.waitForExist({timeout: 60000});
+        this.refJobTitle4.scrollIntoView();
+        this.refJobTitle4.setValue("Senior");
     }
 
     enterValueForEmployer1() {
@@ -98,30 +162,80 @@ class referenceScreen {
         this.refEmployer2.setValue("PMC");
     }
 
+    enterValueForEmployer3() {
+        this.refEmployer3.waitForExist({timeout: 60000});
+        this.refEmployer3.scrollIntoView();
+        this.refEmployer3.setValue("PMC");
+    }
+
+    enterValueForEmployer4() {
+        this.refEmployer4.waitForExist({timeout: 60000});
+        this.refEmployer4.scrollIntoView();
+        this.refEmployer4.setValue("PMC");
+    }
+
     enterValueForDateFrom1 () {
         this.refFrom1.waitForExist({timeout: 60000});
         this.refFrom1.scrollIntoView();
+        this.refFrom1.click();
         browser.pause(1000);
-        this.refFrom1.setValue("012004");
+        this.refFrom1.setValue("012001");
     }
     
     enterValueForDateFrom2 () {
         this.refFrom2.waitForExist({timeout: 60000});
         this.refFrom2.scrollIntoView();
+        this.refFrom2.click();
         browser.pause(1000);
-        this.refFrom2.setValue("012005");
+        this.refFrom2.setValue("012003");
+    }
+
+    enterValueForDateFrom3 () {
+        this.refFrom3.waitForExist({timeout: 60000});
+        this.refFrom3.scrollIntoView();
+        this.refFrom3.click();
+        browser.pause(1000);
+        this.refFrom3.setValue("012005");
+    }
+
+    enterValueForDateFrom4 () {
+        this.refFrom4.waitForExist({timeout: 60000});
+        this.refFrom4.scrollIntoView();
+        this.refFrom4.click();
+        browser.pause(1000);
+        this.refFrom4.setValue("012007");
     }
 
     enterValueForDateTo1 () {
         this.refTo1.waitForExist({timeout: 60000});
         this.refTo1.scrollIntoView();
-        this.refTo1.setValue("012006");
+        this.refTo1.click();
+        browser.pause(1000);
+        this.refTo1.setValue("012002");
     }
 
     enterValueForDateTo2 () {
         this.refTo2.waitForExist({timeout: 60000});
         this.refTo2.scrollIntoView();
-        this.refTo2.setValue("012009");
+        this.refTo2.click();
+        browser.pause(1000);
+        this.refTo2.setValue("012004");
+    }
+
+    enterValueForDateTo3 () {
+        this.refTo3.waitForExist({timeout: 60000});
+        this.refTo3.scrollIntoView();
+        this.refTo3.click();
+        browser.pause(1000);
+        this.refTo3.setValue("012006");
+    }
+
+    enterValueForDateTo4 () {
+        this.refTo4.waitForExist({timeout: 60000});
+        this.refTo4.scrollIntoView();
+        this.refTo4.click();
+        browser.pause(1000);
+        this.refTo4.setValue("012008");
     }
 
     fillOutReference1 () {
@@ -140,6 +254,32 @@ class referenceScreen {
         this.enterValueForEmployer2();
         this.enterValueForDateFrom2();
         this.enterValueForDateTo2();
+    }
+
+    fillOutReference3 () {
+        this.enterValueForRefName3();
+        this.enterValueForEmail3();
+        this.enterValueForJobTitle3();
+        this.enterValueForEmployer3();
+        this.enterValueForDateFrom3();
+        this.enterValueForDateTo3();
+    }
+
+    fillOutReference4 () {
+        this.enterValueForRefName4();
+        this.enterValueForEmail4();
+        this.enterValueForJobTitle4();
+        this.enterValueForEmployer4();
+        this.enterValueForDateFrom4();
+        this.enterValueForDateTo4();
+    }
+
+    clickOnAddAnotherBtn () {
+        //following will wait for "Add Another" button
+        this.addAnotherBtn.waitForExist({timeout: 60000});
+        this.addAnotherBtn.scrollIntoView();
+        this.addAnotherBtn.click();
+        browser.pause(2000);
     }
 }
 module.exports = new referenceScreen();

@@ -20,7 +20,7 @@ describe('verify the reference screen of Join-DT', () => {
         loginScreen.assertLoginScreen();
     });
 
-    it('Verify details of Reference section', () => {
+    it('Verify details of Reference section with 2 References', () => {
         // //following will open browser and load the url
         browser.url(process.env.E2EPORTAL);
 
@@ -45,6 +45,112 @@ describe('verify the reference screen of Join-DT', () => {
 
         //following will fill out fields of Reference 2
         refereneScreen.fillOutReference2();
+
+        //following will click on Save and Continue button
+        refereneScreen.clickOnSaveAndContinueBtn();
+        browser.pause(5000);
+
+        //following will click on Menu button (hamburger menu)
+        sectionScreen.clickOnMenuBtn();
+
+        //following will click on Peronal Details section 
+        sectionScreen.clickOnReferenceSection();
+        browser.pause(5000);
+
+        //following will assert the section heading of Reference section
+        refereneScreen.assertReferencePageHeader();
+
+        //following will assert status of the References page
+        refereneScreen.assertSectionStatus();
+    });
+
+    it('Verify details of Reference section with 3 References', () => {
+        // //following will open browser and load the url
+        browser.url(process.env.E2EPORTAL);
+
+        // //following will perform login 
+        loginScreen.loginIntoSite(process.env.USER, process.env.PASSWORD);
+
+        // //following will assert dashboard screen
+        dashboardScreen.assertDashboardLbl();
+
+        sectionScreen.clickOnMenuBtn();
+        sectionScreen.clickOnProfileMenuOption();
+
+        //following will click on Peronal Details section 
+        sectionScreen.clickOnReferenceSection();
+        browser.pause(5000);
+
+        //following will assert the section heading of Reference section
+        refereneScreen.assertReferencePageHeader();
+
+        //following will fill out fileds of Reference 1
+        refereneScreen.fillOutReference1();
+
+        //following will fill out fields of Reference 2
+        refereneScreen.fillOutReference2();
+
+        //following will click on "Add another" button
+        refereneScreen.clickOnAddAnotherBtn();
+
+        //following will fill out fields of Reference 3
+        refereneScreen.fillOutReference3();
+
+        //following will click on Save and Continue button
+        refereneScreen.clickOnSaveAndContinueBtn();
+        browser.pause(5000);
+
+        //following will click on Menu button (hamburger menu)
+        sectionScreen.clickOnMenuBtn();
+
+        //following will click on Peronal Details section 
+        sectionScreen.clickOnReferenceSection();
+        browser.pause(5000);
+
+        //following will assert the section heading of Reference section
+        refereneScreen.assertReferencePageHeader();
+
+        //following will assert status of the References page
+        refereneScreen.assertSectionStatus();
+    });
+
+    it('Verify details of Reference section with 4 References', () => {
+        // //following will open browser and load the url
+        browser.url(process.env.E2EPORTAL);
+
+        // //following will perform login 
+        loginScreen.loginIntoSite(process.env.USER, process.env.PASSWORD);
+
+        // //following will assert dashboard screen
+        dashboardScreen.assertDashboardLbl();
+
+        sectionScreen.clickOnMenuBtn();
+        sectionScreen.clickOnProfileMenuOption();
+
+        //following will click on Peronal Details section 
+        sectionScreen.clickOnReferenceSection();
+        browser.pause(5000);
+
+        //following will assert the section heading of Reference section
+        refereneScreen.assertReferencePageHeader();
+
+        //following will fill out fileds of Reference 1
+        refereneScreen.fillOutReference1();
+
+        //following will fill out fields of Reference 2
+        refereneScreen.fillOutReference2();
+
+        //following will click on "Add another" button
+        refereneScreen.clickOnAddAnotherBtn();
+
+        //following will fill out fields of Reference 3
+        refereneScreen.fillOutReference3();
+
+        //following will click on "Add another" button
+        refereneScreen.clickOnAddAnotherBtn();
+
+        //following will fill out fields of Reference 4
+        refereneScreen.fillOutReference4();
 
         //following will click on Save and Continue button
         refereneScreen.clickOnSaveAndContinueBtn();
