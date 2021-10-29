@@ -19,7 +19,7 @@ class sectionScreen {
 
     get trainingSection () { return $('//div[@id="navigation-section-list-item-training"]')}
 
-    get taxAndNextOfKinSection () { return $('//div[@id="navigation-section-list-item-tax-and-next-of-kin"]')}
+    get taxAndNextOfKinSection () { return $('//div[@id="navigation-section-list-item-payment-method"]')}
 
     get dbsDetailsSection () { return $('//div[@id="navigation-section-list-item-dbs"]')}
 
@@ -93,13 +93,6 @@ class sectionScreen {
     }
 
     clickOnTaxAndNextOfKinSection () { 
-        // browser.touchAction([
-        //     { action: 'press', x: 1000, y: 2000 },
-        //     { action: 'moveTo', x: 1000, y: 1000 },
-        //     'release'
-        // ]);
-        this.taxAndNextOfKinSection.scrollIntoView();
-        browser.pause(1000);
         this.taxAndNextOfKinSection.waitForExist({timeout: 60000});
         this.taxAndNextOfKinSection.click();
         browser.pause(2000);

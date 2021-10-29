@@ -21,7 +21,7 @@ describe('verify the identification documents section', () => {
         loginScreen.assertLoginScreen();
     });
 
-    it('to verify the details of identification documents section', () => {
+    it('to verify the details of identification documents section - without name change', () => {
         //following will open browser and load the url
         browser.url(process.env.E2EPORTAL);
 
@@ -66,5 +66,9 @@ describe('verify the identification documents section', () => {
 
         //following will assert the status of the section
         identificationDocumentsScreen.assertSectionStatus();
+    });
+
+    it('to verify the details of identification documents section - with name change', () => {
+        
     });
 });

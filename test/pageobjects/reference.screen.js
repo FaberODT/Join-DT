@@ -278,6 +278,7 @@ class referenceScreen {
         //following will wait for "Add Another" button
         this.addAnotherBtn.waitForExist({timeout: 60000});
         this.addAnotherBtn.scrollIntoView();
+        browser.pause(1000);
         this.addAnotherBtn.click();
         browser.pause(2000);
     }
