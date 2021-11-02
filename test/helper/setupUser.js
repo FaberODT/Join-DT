@@ -8,11 +8,14 @@ var expect = require('chai').expect,
   import_user = supertest("https://e2e-dt-api.joinpulse.co.uk/profile-management-core/v0/import-profile/f7018701-774d-4be6-8ca2-fafd8482ea5c"),
   joindt_fileUpload = supertest("https://e2e-dt-api.joinpulse.co.uk/profile-management-core/v1/my-profile"),
   joindt_admin = supertest("https://e2e-dt-api.joinpulse.co.uk/profile-management-core/v1/profiles/f7018701-774d-4be6-8ca2-fafd8482ea5c"),
-  fabAccessToken = "", fabAccessTokenForUser = "", joinpulseAccessToken = "", joinpulseAccessTokenForUser = "", fileUpload_responce = [], fileUpload_responce1 = [], fileUpload_responce_DBS = [], fileUpload_professional = [], fileUpload_professional_qualification = [], fileUpload_insurance = [], fileUpload_incorporation_kin = [], fileUpload_business_kin = [],
+  fabAccessToken = "", fabAccessTokenForUser = "", joinpulseAccessToken = "", joinpulseAccessTokenForUser = "", fileUpload_responce = [], fileUpload_responce1 = [], fileUpload_responce_DBS = [], fileUpload_professional_CV = [], fileUpload_professional_Quali_Certi = [], fileUpload_professional_insurance = [], fileUpload_professional = [], fileUpload_professional_qualification = [], fileUpload_insurance = [], fileUpload_incorporation_kin = [], fileUpload_business_kin = [],
   fileUpload_RWC1 = [], fileUpload_RWC2 = [], fileUpload_RWC3 = [], fileUpload_RWC4 = [];
   
 trainingCertificates = [];
 dbsCertificates = [];
+professionalDetailCV = [];
+professionalDetailQualiCerti = [];
+professionalDetailInsurance = [];
 professionalDetail = [];
 professionalQualification = [];
 professionalInsurance = [];
@@ -21,6 +24,7 @@ businessCertiKin = [];
 rightToWorkChecks1 = [];
 rightToWorkChecks2 = [];
 rightToWorkChecks3 = [];
+rightToWorkChecks4 = [];
 signedWithFile = "", signedWithoutFile = "";
 
 class apiService {
@@ -238,9 +242,9 @@ class apiService {
      * API will upload Supporting file 1 for Right to Work Checks section
      */
     uploadFile1ForIdentificationDocumentsSection() {
-        console.log("Joinpulse Auth token is: " + joinpulseAccessToken);
+        console.log("Joinpulse Auth token is: " + joinpulseAccessTokenForUser);
         joindt_fileUpload.post('/files/RightToWorkEUUKPassport')
-        .set('Authorization', `Bearer ${joinpulseAccessToken}`)
+        .set('Authorization', `Bearer ${joinpulseAccessTokenForUser}`)
         .attach('file', process.cwd() + "/app/test.jpg")
         .expect(200)
         .end((err, res) => {
@@ -259,7 +263,7 @@ class apiService {
      */
     uploadFile2ForIdentificationDocumentsSection() {
         joindt_fileUpload.post('/files/ProofOfAddressBankStatement' + `?stagingId=${rightToWorkChecks1[0][3]}`)
-        .set('Authorization', `Bearer ${joinpulseAccessToken}`)
+        .set('Authorization', `Bearer ${joinpulseAccessTokenForUser}`)
         .attach('file', process.cwd() + "/app/test.jpg")
         .expect(200)
         .end((err, res) => {
@@ -278,7 +282,7 @@ class apiService {
      */
     uploadFile3ForIdentificationDocumentsSection() {
         joindt_fileUpload.post('/files/ProofOfAddress2UtilityBill' + `?stagingId=${rightToWorkChecks2[0][3]}`)
-        .set('Authorization', `Bearer ${joinpulseAccessToken}`)
+        .set('Authorization', `Bearer ${joinpulseAccessTokenForUser}`)
         .attach('file', process.cwd() + "/app/test.jpg")
         .expect(200)
         .end((err, res) => {
@@ -292,35 +296,51 @@ class apiService {
         });
     }
 
-
     /**
-     * API will upload Supporting file 4 for Right to Work Checks section
+     * API will upload supporting file for changed name
      */
-    // uploadFile4ForRightToWorkChecksSection() {
-    //     console.log("rightToWorkChecks while uploaidng 4th file: " + rightToWorkChecks);
-    //     joindt_fileUpload.post('/files/ProofOfAddress2' + `?stagingId=${rightToWorkChecks[2][3]}`)
-    //     .set('Authorization', `Bearer ${joinpulseAccessToken}`)
-    //     .attach('file', process.cwd() + "/app/test.jpg")
-    //     .expect(200)
-    //     .end((err, res) => {
-    //         fileUpload_RWC4[0] = res.body.file.fileName;
-    //         fileUpload_RWC4[1] = res.body.file.fileSizeBytes;
-    //         fileUpload_RWC4[2] = res.body.file.dateCreated;
-    //         fileUpload_RWC4[3] = res.body.stagingId;
-    //         rightToWorkChecks.push(fileUpload_RWC4);
-    //         if(err) return err;
-    //     });
-    // }
+    uploadFileChangedNameForIdentificationDocumentsSection() {
+        joindt_fileUpload.post('/files/NameChangeDocument' + `?stagingId=${rightToWorkChecks3[0][3]}`)
+        .set('Authorization', `Bearer ${joinpulseAccessTokenForUser}`)
+        .attach('file', process.cwd() + "/app/test.jpg")
+        .expect(200)
+        .end((err, res) => {
+            fileUpload_RWC4[0] = res.body.file.fileName;
+            fileUpload_RWC4[1] = res.body.file.fileSizeBytes;
+            fileUpload_RWC4[2] = res.body.file.dateCreated;
+            fileUpload_RWC4[3] = res.body.stagingId;
+            rightToWorkChecks4.push(fileUpload_RWC4);
+            console.log("rightToWorkChecks4 value for changed name: " + rightToWorkChecks4);
+            if(err) return err;
+        });
+    }
+
 
     /**
      * API will save and continue the RWC section
      */
     saveAndContinueRWCSection () {
         console.log("rightToWorkChecks while saving the section: " + rightToWorkChecks3);
+        console.log("Join pulse token before saving: " + joinpulseAccessToken);
         joindt_fileUpload.patch(`?stagingId=${rightToWorkChecks3[0][3]}`)
         .set('Accept', 'application/json')
         .set('Authorization', `Bearer ${joinpulseAccessToken}`)
         .send(dataServices.getRightToWorkChecksInfo())
+        .expect(204)
+        .end((err, res) => {
+            if(err) return err;
+        });
+    }
+
+    /**
+     * API will save and continue the RWC section
+     */
+    saveAndContinueRWCSectionWithChangedName () {
+        console.log("rightToWorkChecks while saving the section: " + rightToWorkChecks4);
+        joindt_fileUpload.patch(`?stagingId=${rightToWorkChecks4[0][3]}`)
+        .set('Accept', 'application/json')
+        .set('Authorization', `Bearer ${joinpulseAccessTokenForUser}`)
+        .send(dataServices.getRightToWorkChecksInfoWithChangedName())
         .expect(204)
         .end((err, res) => {
             if(err) return err;
@@ -439,6 +459,83 @@ class apiService {
             if(err) return err;
         });
     }
+
+    /**
+     * Upload CV for professional details section
+     */
+     uploadCVForProfessionalDetailsSection1() {
+        console.log("Joinpulse bearer token value: " + joinpulseAccessTokenForUser);
+        joindt_fileUpload.post('/files/CV')
+        .set('Authorization', `Bearer ${joinpulseAccessTokenForUser}`)
+        .attach('file', process.cwd() + "/app/test.jpg")
+        .expect(200)
+        .end((err, res) => {
+            fileUpload_professional_CV[0] = res.body.file.fileName;
+            fileUpload_professional_CV[1] = res.body.file.fileSizeBytes;
+            fileUpload_professional_CV[2] = res.body.file.dateCreated;
+            fileUpload_professional_CV[3] = res.body.stagingId;
+            professionalDetailCV.push(fileUpload_professional_CV);
+            console.log("Uploaded CV is: " + professionalDetailCV);
+            if(err) return err;
+        });
+    }
+
+    /**
+     * API will upload qualification certificate
+     */
+    uploadQualificationCertificateForProfessionalDetails(){
+        console.log("Joinpulse bearer token value: " + joinpulseAccessTokenForUser);
+        joindt_fileUpload.post('/files/HigherEducationCertificate' + `?stagingId=${professionalDetailCV[0][3]}`)
+        .set('Authorization', `Bearer ${joinpulseAccessTokenForUser}`)
+        .attach('file', process.cwd() + "/app/test.jpg")
+        .expect(200)
+        .end((err, res) => {
+            fileUpload_professional_Quali_Certi[0] = res.body.file.fileName;
+            fileUpload_professional_Quali_Certi[1] = res.body.file.fileSizeBytes;
+            fileUpload_professional_Quali_Certi[2] = res.body.file.dateCreated;
+            fileUpload_professional_Quali_Certi[3] = res.body.stagingId;
+            professionalDetailQualiCerti.push(fileUpload_professional_Quali_Certi);
+            console.log("Uploaded certificate is: " + professionalDetailQualiCerti);
+            if(err) return err;
+        });
+    }
+
+    /**
+     * API will upload professional indemnity insurance
+     */
+    uploadProfessionalInsuranceCertificate() {
+        console.log("Joinpulse bearer token value: " + joinpulseAccessTokenForUser);
+        joindt_fileUpload.post('/files/ProfessionalIndemnity' + `?stagingId=${professionalDetailQualiCerti[0][3]}`)
+        .set('Authorization', `Bearer ${joinpulseAccessTokenForUser}`)
+        .attach('file', process.cwd() + "/app/test.jpg")
+        .expect(200)
+        .end((err, res) => {
+            fileUpload_professional_insurance[0] = res.body.file.fileName;
+            fileUpload_professional_insurance[1] = res.body.file.fileSizeBytes;
+            fileUpload_professional_insurance[2] = res.body.file.dateCreated;
+            fileUpload_professional_insurance[3] = res.body.stagingId;
+            professionalDetailInsurance.push(fileUpload_professional_insurance);
+            console.log("Uploaded insurance is: " + professionalDetailInsurance);
+            if(err) return err;
+        });
+    }
+
+
+    /**
+     * API will save and continue Professional Details section
+     */
+    saveAndContinueProfessionalDetailsSection () {
+        console.log("Qualification certificates are: " + professionalDetailInsurance);
+        joindt_fileUpload.patch(`?stagingId=${professionalDetailInsurance[0][3]}`)
+        .set('Accept', 'application/json')
+        .set('Authorization', `Bearer ${joinpulseAccessTokenForUser}`)
+        .send(dataServices.getProfessionalDetailsCertificates())
+        .expect(204)
+        .end((err, res) => {
+            if(err) return err;
+        });
+    }
+
 
     /**
      * API will save and continue the DBS section

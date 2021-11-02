@@ -70,40 +70,43 @@ describe('verify the Professional details section', () => {
     // });
 
     it('To verify the details of professional details section - with BABCP Professional Membership', () => {
+        //following will generate the acacium token
+        apiScreen.getFaberAuthTokenForUser();
+        browser.pause(5000);
+
+        //following will generate the dt tiken
+        apiScreen.getJoinDTAuthTokenForUser();
+        browser.pause(5000);
+
+        //following will upload the CV for the section
+        apiScreen.uploadCVForProfessionalDetailsSection1();
+        browser.pause(10000);
+
+        //following will upload qualification certificate for the section
+        apiScreen.uploadQualificationCertificateForProfessionalDetails();
+        browser.pause(10000);
+
         //following will open browser and load the url
         browser.url(process.env.E2EPORTAL);
+
+        //following will upload insurance certificate for the section
+        apiScreen.uploadProfessionalInsuranceCertificate();
+        browser.pause(10000);
+
+        //following will save and continue the professional details section
+        apiScreen.saveAndContinueProfessionalDetailsSection();
+        browser.pause(20000);
         
         //following will perform login 
         loginScreen.loginIntoSite(process.env.USER, process.env.PASSWORD);
 
         //following will assert dashboard screen
         dashboardScreen.assertDashboardLbl();
-        
+
         //following will click on Menu button - hamburger menu icon
         sectionScreen.clickOnMenuBtn();
+        //following will click on Profile menu option
         sectionScreen.clickOnProfileMenuOption();
-
-        //following will click on Right To Work Checks option
-        sectionScreen.clickOnProfessionalDetailsSection();        
-
-        //following will assert the page header of the Section
-        professionalDetailsScreen.assertIdentificationDocumentsPageHeader();
-
-        //following will click on Yes radio button of Professional Membership
-        professionalDetailsScreen.clickOnYesRadioBtn();
-
-        //following will click on BABCP professional membership radio button
-        professionalDetailsScreen.clickOnBABCPRadioBtn();
-
-        //following will enter value into BABCP professional membership text box
-        professionalDetailsScreen.enterValueForProfessionalMemberships();
-
-        //following will click on Save and Continue button
-        professionalDetailsScreen.clickOnSaveAndContinueBtn();
-        browser.pause(5000);
-
-        //following will click on Menu button - hamburger menu icon
-        sectionScreen.clickOnMenuBtn();
 
         //following will click on Right To Work Checks option
         sectionScreen.clickOnProfessionalDetailsSection();        
@@ -150,6 +153,8 @@ describe('verify the Professional details section', () => {
 
         //following will click on Menu button - hamburger menu icon
         sectionScreen.clickOnMenuBtn();
+        //following will click on Profile menu option
+        sectionScreen.clickOnProfileMenuOption();
 
         //following will click on Right To Work Checks option
         sectionScreen.clickOnProfessionalDetailsSection();        
@@ -196,6 +201,8 @@ describe('verify the Professional details section', () => {
 
         //following will click on Menu button - hamburger menu icon
         sectionScreen.clickOnMenuBtn();
+        //following will click on Profile menu option
+        sectionScreen.clickOnProfileMenuOption();
 
         //following will click on Right To Work Checks option
         sectionScreen.clickOnProfessionalDetailsSection();        
@@ -242,6 +249,8 @@ describe('verify the Professional details section', () => {
 
         //following will click on Menu button - hamburger menu icon
         sectionScreen.clickOnMenuBtn();
+        //following will click on Profile menu option
+        sectionScreen.clickOnProfileMenuOption();
 
         //following will click on Right To Work Checks option
         sectionScreen.clickOnProfessionalDetailsSection();        

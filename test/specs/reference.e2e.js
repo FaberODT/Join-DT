@@ -54,6 +54,7 @@ describe('verify the reference screen of Join-DT', () => {
 
         //following will click on Menu button (hamburger menu)
         sectionScreen.clickOnMenuBtn();
+        sectionScreen.clickOnProfileMenuOption();
 
         //following will click on Peronal Details section 
         sectionScreen.clickOnReferenceSection();
@@ -79,6 +80,7 @@ describe('verify the reference screen of Join-DT', () => {
 
         //following will click on Menu button (hamburger menu)
         sectionScreen.clickOnMenuBtn();
+        sectionScreen.clickOnProfileMenuOption();
 
         //following will click on Peronal Details section 
         sectionScreen.clickOnReferenceSection();
@@ -104,6 +106,7 @@ describe('verify the reference screen of Join-DT', () => {
 
         //following will click on Menu button (hamburger menu)
         sectionScreen.clickOnMenuBtn();
+        sectionScreen.clickOnProfileMenuOption();
 
         //following will click on Peronal Details section 
         sectionScreen.clickOnReferenceSection();

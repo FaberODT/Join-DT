@@ -47,6 +47,7 @@ describe('verify the Payment options section', () => {
 
         //following will click on Menu button - hamburger menu option
         sectionScreen.clickOnMenuBtn();
+        sectionScreen.clickOnProfileMenuOption();
 
         //following will click on Payment options section
         sectionScreen.clickOnTaxAndNextOfKinSection();
@@ -69,6 +70,7 @@ describe('verify the Payment options section', () => {
 
         //following will click on Menu button - hamburger menu option
         sectionScreen.clickOnMenuBtn();
+        sectionScreen.clickOnProfileMenuOption();
 
         //following will click on Payment Option section
         sectionScreen.clickOnTaxAndNextOfKinSection();

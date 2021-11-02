@@ -40,6 +40,7 @@ class professionalDetailsScreen {
     clickOnYesRadioBtn () {
         this.yesRadioBtn.waitForExist({timeout: 60000});
         this.yesRadioBtn.scrollIntoView();
+        browser.pause(1000);
         this.yesRadioBtn.click();
         browser.pause(1000);
     }
@@ -47,6 +48,7 @@ class professionalDetailsScreen {
     clickOnBABCPRadioBtn () {
         this.babcpRadioBtn.waitForExist({timeout: 60000});
         this.babcpRadioBtn.scrollIntoView();
+        browser.pause(1000);
         this.babcpRadioBtn.click();
     }
 
@@ -77,6 +79,7 @@ class professionalDetailsScreen {
     enterValueForOtherProfessional () {
         this.otherProfessionalTxtBox.waitForExist({timeout: 60000});
         this.otherProfessionalTxtBox.scrollIntoView();
+        browser.pause(1000);
         this.otherProfessionalTxtBox.setValue("123456789");
         browser.pause(500);
     }
@@ -84,6 +87,7 @@ class professionalDetailsScreen {
     enterValueForProfessionalMemberships () {
         this.professionalMembershipTxtBox.waitForExist({timeout: 60000});
         this.professionalMembershipTxtBox.scrollIntoView();
+        browser.pause(1000);
         this.professionalMembershipTxtBox.setValue("123456789");
         browser.pause(500);
     }

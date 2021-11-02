@@ -18,7 +18,7 @@ config.capabilities = [
 ];
 
 config.specs = [
-    './test/specs/**/paymentOptions.e2e.js'
+    './test/specs/**/reference.e2e.js'
 ];
 
 // config.suites = {

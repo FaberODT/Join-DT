@@ -212,11 +212,19 @@ exports.config = {
 
         global.rightToWorkChecks3;
 
+        global.rightToWorkChecks4;
+
         global.professionalDetail;
         
         global.professionalQualification;
 
         global.professionalInsurance;
+
+        global.professionalDetailCV;
+
+        global.professionalDetailQualiCerti;
+
+        global.professionalDetailInsurance;
 
     },
     /**

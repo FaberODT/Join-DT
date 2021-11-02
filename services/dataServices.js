@@ -119,6 +119,45 @@ var DataServices = function() {
         }
     }
 
+    this.getProfessionalDetailsCertificates = () => {
+        return {
+            "sections": [
+                {
+                    "id": "work-history-and-qualifications",
+                    "values": {
+                        "WorkHistoryAdditional": [
+                            ""
+                        ],
+                        "CV": [
+                            {
+                                "fileName": `${professionalDetailCV[0][0]}`,
+                                "fileSizeBytes": `${professionalDetailCV[0][1]}`,
+                                "dateCreated": `${professionalDetailCV[0][2]}`
+                            }
+                        ],
+                        "HigherEducationCertificate": [
+                            {
+                                "fileName": `${professionalDetailQualiCerti[0][0]}`,
+                                "fileSizeBytes": `${professionalDetailQualiCerti[0][1]}`,
+                                "dateCreated": `${professionalDetailQualiCerti[0][2]}`
+                            }
+                        ],
+                        "Profbodyaccreditation": ["Yes"],
+                        "ProfessionalIndemnity": [
+                            {
+                                "fileName": `${professionalDetailInsurance[0][0]}`,
+                                "fileSizeBytes": `${professionalDetailInsurance[0][1]}`,
+                                "dateCreated": `${professionalDetailInsurance[0][2]}`
+                            }
+                        ],
+                        "Profbodymembership": ["BABCPRegistered"],
+                        "HCPCProfnumber": ["123456789"]
+                    }
+                }
+            ]
+        }
+    }
+
     this.getProfessionalDetails = () => {
         console.log("value of 1st certificate: " + professionalDetail[0][0]);
         console.log("value of 2nd certificate: " + professionalQualification[0][0]);
@@ -404,7 +443,7 @@ var DataServices = function() {
                         "ProofOfAddress2Select": ["ProofOfAddress2UtilityBill"],
                         "TextProofOfNameChange": [],
                         "NameChangeSelection": ["No"],
-                        "RightToWorkUKPassport": [
+                        "RightToWorkEUUKPassport": [
                             {
                                 "fileName": `${rightToWorkChecks1[0][0]}`,
                                 "fileSizeBytes": `${rightToWorkChecks1[0][1]}`,
@@ -423,6 +462,67 @@ var DataServices = function() {
                                 "fileName": `${rightToWorkChecks3[0][0]}`,
                                 "fileSizeBytes": `${rightToWorkChecks3[0][1]}`,
                                 "dateCreated": `${rightToWorkChecks3[0][2]}`
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+
+    this.getRightToWorkChecksInfoWithChangedName = () => {
+        return {
+            "sections": [
+                {
+                    "id": "identification-documents",
+                    "values": {
+                        "TextPreEmploymentChecks": [
+                            ""
+                        ],
+                        "RightToWorkSelection": [
+                            "RightToWorkEUUKPassport"
+                        ],
+                        "TextProofOfAddress": [
+                            ""
+                        ],
+                        "ProofOfAddress1": [
+                            "ProofOfAddressBankStatement"
+                        ],
+                        "ProofOfAddress2Select": [
+                            "ProofOfAddress2UtilityBill"
+                        ],
+                        "TextProofOfNameChange": [
+                            ""
+                        ],
+                        "NameChangeSelection": [
+                            "Yes"
+                        ],
+                        "RightToWorkEUUKPassport": [
+                            {
+                                "fileName": `${rightToWorkChecks1[0][0]}`,
+                                "fileSizeBytes": `${rightToWorkChecks1[0][1]}`,
+                                "dateCreated": `${rightToWorkChecks1[0][2]}`
+                            }
+                        ],
+                        "ProofOfAddressBankStatement": [
+                            {
+                                "fileName": `${rightToWorkChecks2[0][0]}`,
+                                "fileSizeBytes": `${rightToWorkChecks2[0][1]}`,
+                                "dateCreated": `${rightToWorkChecks2[0][2]}`
+                            }
+                        ],
+                        "ProofOfAddress2UtilityBill": [
+                            {
+                                "fileName": `${rightToWorkChecks3[0][0]}`,
+                                "fileSizeBytes": `${rightToWorkChecks3[0][1]}`,
+                                "dateCreated": `${rightToWorkChecks3[0][2]}`
+                            }
+                        ],
+                        "NameChangeDocument": [
+                            {
+                                "fileName": `${rightToWorkChecks4[0][0]}`,
+                                "fileSizeBytes": `${rightToWorkChecks4[0][1]}`,
+                                "dateCreated": `${rightToWorkChecks4[0][2]}`
                             }
                         ]
                     }
