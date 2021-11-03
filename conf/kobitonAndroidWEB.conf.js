@@ -1,7 +1,7 @@
 const {config} = require('./kobitonWDIO.conf')
 
 config.specs = [
-  './test/specs/**/reference.e2e.js'
+  './test/specs/**/dbsDetails.e2e.js'
 ]
 
 config.capabilities = [{

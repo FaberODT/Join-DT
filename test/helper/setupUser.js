@@ -321,10 +321,10 @@ class apiService {
      */
     saveAndContinueRWCSection () {
         console.log("rightToWorkChecks while saving the section: " + rightToWorkChecks3);
-        console.log("Join pulse token before saving: " + joinpulseAccessToken);
+        console.log("Join pulse token before saving: " + joinpulseAccessTokenForUser);
         joindt_fileUpload.patch(`?stagingId=${rightToWorkChecks3[0][3]}`)
         .set('Accept', 'application/json')
-        .set('Authorization', `Bearer ${joinpulseAccessToken}`)
+        .set('Authorization', `Bearer ${joinpulseAccessTokenForUser}`)
         .send(dataServices.getRightToWorkChecksInfo())
         .expect(204)
         .end((err, res) => {

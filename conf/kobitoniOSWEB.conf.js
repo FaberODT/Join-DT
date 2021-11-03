@@ -1,7 +1,7 @@
 const {config} = require('./kobitonWDIO.conf')
 
 config.specs = [
-  './test/specs/**/dbsDetails.e2e.js'
+  './test/specs/**/paymentOptions.e2e.js'
 ]
 
 config.capabilities = [{
@@ -11,9 +11,9 @@ config.capabilities = [{
   captureScreenshots: true,
   browserName:        'safari',
   deviceGroup:        'KOBITON',
-  deviceName:         'iPhone XS Max',
+  deviceName:         'iPhone XR',
   platformName:       'iOS',
-  platformVersion:    '13.5.1'
+  platformVersion:    '14.3'
 }]
 
 exports.config = config
