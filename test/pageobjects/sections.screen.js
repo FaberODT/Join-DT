@@ -9,6 +9,8 @@ class sectionScreen {
 
     get personalDetailsSection  () { return $('//div[@id="navigation-section-list-item-personal-details"]')}
 
+    get interviewSection () { return $('//div[@id="navigation-section-list-item-interview"]')}
+
     get professionalDetailsSection () { return $('//div[@id="navigation-section-list-item-work-history-and-qualifications"]')}
 
     get gradeAndEmployerSection () { return $('//div[@id="navigation-section-list-item-grade-and-employer"]')}
@@ -18,6 +20,8 @@ class sectionScreen {
     get nmcSection () { return $('//div[@id="navigation-section-list-item-nmc-check"]')}
 
     get trainingSection () { return $('//div[@id="navigation-section-list-item-training"]')}
+
+    get paymentMethodSection () { return $('//div[@id="navigation-section-list-item-payment-method"]')}
 
     get taxAndNextOfKinSection () { return $('//div[@id="navigation-section-list-item-payment-method"]')}
 
@@ -60,6 +64,11 @@ class sectionScreen {
         this.personalDetailsSection.waitForExist({timeout: 60000});
         this.personalDetailsSection.click();
         browser.pause(2000);
+    }
+
+    clickOnInterviewSection () {
+        this.interviewSection.waitForExist({timeout: 60000});
+        this.interviewSection.click();
     }
 
     clickOnProfessionalDetailsSection () {
@@ -120,6 +129,13 @@ class sectionScreen {
         this.identificationDocumentSection.waitForExist({timeout: 60000});
         this.identificationDocumentSection.click();
         browser.pause(2000);
+    }
+
+    clickOnPaymentMethodSection () {
+        this.paymentMethodSection.waitForExist({timeout: 60000});
+        this.paymentMethodSection.scrollIntoView();
+        browser.pause(1000);
+        this.paymentMethodSection.click();
     }
 }
 module.exports = new sectionScreen();

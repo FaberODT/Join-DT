@@ -1,5 +1,6 @@
 const ReportAggregator = require('@rpii/wdio-html-reporter').ReportAggregator;
 const HtmlReporter = require('@rpii/wdio-html-reporter').HtmlReporter;
+// const video = require('wdio-video-reporter');
 
 exports.config = {
     maxInstances: 1,
@@ -141,6 +142,11 @@ exports.config = {
             //to turn on screenshots after every test
             useOnAfterCommandForScreenshot: false,
         }]
+        // ,
+        // [video, {
+        //     saveAllVideos: false,       // If true, also saves videos for successful test cases
+        //     videoSlowdownMultiplier: 3, // Higher to get slower videos, lower for faster videos [Value 1-100]
+        // }]
     ],
 
     framework: 'jasmine',

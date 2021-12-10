@@ -18,7 +18,7 @@ config.capabilities = [
 ];
 
 config.specs = [
-    './test/specs/**/reference.e2e.js'
+    './test/specs/**/sectionStatus.e2e.js'
 ];
 
 // config.suites = {

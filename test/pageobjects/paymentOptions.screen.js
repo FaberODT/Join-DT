@@ -12,7 +12,7 @@ class paymentOptionScreen {
 
     get sectionStatus () { return $('//div[@id="statusMessageHeader"]/span')}
 
-    assertTaxAndNextOfKinPageHeader () {
+    assertPaymentOptionPageHeader () {
         this.pageHeaderLbl.waitForExist({timeout: 60000});
         expect(this.pageHeaderLbl.getText()).to.equal("8. Payment method");
     }

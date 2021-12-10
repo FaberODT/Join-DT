@@ -23,7 +23,7 @@ class professionalDetailsScreen {
 
     get professionalMembershipTxtBox () { return $('//input[@id="HCPCProfnumber"]')}
 
-    assertIdentificationDocumentsPageHeader () {
+    assertProfessionalDetailsPageHeader () {
         this.pageHeaderLbl.waitForExist({timeout: 60000});
         expect(this.pageHeaderLbl.getText()).to.equal("5. Professional details");
     }
