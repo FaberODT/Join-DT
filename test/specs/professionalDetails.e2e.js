@@ -21,55 +21,90 @@ describe('verify the Professional details section', () => {
         loginScreen.assertLoginScreen();
     });
 
-    // it('To verify the details of professional details section - No Professional Memberships', () => {
-    //     //following will open browser and load the url
-    //     browser.url(process.env.E2EPORTAL);
+    it('To verify the details of professional details section - No Professional Memberships', () => {
+        //following will generate the acacium token
+        apiScreen.getFaberAuthToken();
+        browser.pause(5000);
 
-    //     //following will fetch the acacium Auth Token
-    //     apiScreen.getFaberAuthTokenForUser();
-    //     browser.pause(5000);
+        //following will generate the dt tiken
+        apiScreen.getJoinDTAuthToken();
+        browser.pause(5000);
 
-    //     //following will fetch the JoinPulse Auth token
-    //     apiScreen.getJoinDTAuthTokenForUser();
-    //     browser.pause(5000);
+        //following will clear the user profile data
+        apiScreen.deleteUserData();
+        browser.pause(5000);
 
-    //     //following will upload file 1 
-    //     apiScreen.uploadCVForProfessionalDetailsSection();
-    //     browser.pause(10000);
+        //following will import the user profile data
+        apiScreen.updateUserInformation();
+        browser.pause(10000);
 
-    //     //following will upload file 2
-    //     apiScreen.uploadForProfessionalQualificationCerti();
-    //     browser.pause(10000);
+        //following will open browser and load the url
+        browser.url(process.env.E2EPORTAL);
 
-    //     //following will upload file 3
-    //     apiScreen.uploadForIndemnityInsurance();
-    //     browser.pause(10000);
+        //following will fetch the acacium Auth Token
+        apiScreen.getFaberAuthTokenForUser();
+        browser.pause(5000);
+
+        //following will fetch the JoinPulse Auth token
+        apiScreen.getJoinDTAuthTokenForUser();
+        browser.pause(5000);
+
+        //following will upload file 1 
+        apiScreen.uploadCVForProfessionalDetailsSection();
+        browser.pause(10000);
+
+        //following will upload file 2
+        apiScreen.uploadForProfessionalQualificationCerti();
+        browser.pause(10000);
+
+        //following will upload file 3
+        apiScreen.uploadForIndemnityInsurance();
+        browser.pause(10000);
         
-    //     //following will perform login 
-    //     loginScreen.loginIntoSite(process.env.USER, process.env.PASSWORD);
+        //following will perform login 
+        loginScreen.loginIntoSite(process.env.USER, process.env.PASSWORD);
 
-    //     //following will save and continue the professional details section
-    //     apiScreen.saveAndContinueProfessionalDetails();
-    //     browser.pause(20000);
+        //following will save and continue the professional details section
+        apiScreen.saveAndContinueProfessionalDetails();
+        browser.pause(20000);
 
-    //     //following will assert dashboard screen
-    //     dashboardScreen.assertDashboardLbl();
+        //following will assert dashboard screen
+        dashboardScreen.assertDashboardLbl();
         
-    //     //following will click on Menu button - hamburger menu icon
-    //     sectionScreen.clickOnMenuBtn();
-    //     sectionScreen.clickOnProfileMenuOption();
+        //following will click on Menu button - hamburger menu icon
+        sectionScreen.clickOnMenuBtn();
+        sectionScreen.clickOnProfileMenuOption();
 
-    //     //following will click on Right To Work Checks option
-    //     sectionScreen.clickOnProfessionalDetailsSection();        
+        //following will click on Right To Work Checks option
+        sectionScreen.clickOnProfessionalDetailsSection();        
 
-    //     //following will assert the page header of the Section
-    //     professionalDetailsScreen.assertIdentificationDocumentsPageHeader();
+        //following will assert the page header of the Section
+        professionalDetailsScreen.assertProfessionalDetailsPageHeader();
 
-    //     //following will assert the status of the section
-    //     professionalDetailsScreen.assertSectionStatus();
-    // });
+        //following will assert the status of the section
+        professionalDetailsScreen.assertSectionStatus();
+    });
 
     it('To verify the details of professional details section - with BABCP Professional Membership', () => {
+        //following will generate the acacium token
+        apiScreen.getFaberAuthToken();
+        browser.pause(5000);
+
+        //following will generate the dt tiken
+        apiScreen.getJoinDTAuthToken();
+        browser.pause(5000);
+
+        //following will clear the user profile data
+        apiScreen.deleteUserData();
+        browser.pause(5000);
+
+        //following will import the user profile data
+        apiScreen.updateUserInformation();
+        browser.pause(10000);
+
+        //following will open browser and load the url
+        browser.url(process.env.E2EPORTAL);
+
         //following will generate the acacium token
         apiScreen.getFaberAuthTokenForUser();
         browser.pause(5000);
@@ -86,19 +121,16 @@ describe('verify the Professional details section', () => {
         apiScreen.uploadQualificationCertificateForProfessionalDetails();
         browser.pause(10000);
 
-        //following will open browser and load the url
-        browser.url(process.env.E2EPORTAL);
-
         //following will upload insurance certificate for the section
         apiScreen.uploadProfessionalInsuranceCertificate();
         browser.pause(10000);
 
+        //following will perform login 
+        loginScreen.loginIntoSite(process.env.USER, process.env.PASSWORD);
+
         //following will save and continue the professional details section
         apiScreen.saveAndContinueProfessionalDetailsSection();
         browser.pause(20000);
-        
-        //following will perform login 
-        loginScreen.loginIntoSite(process.env.USER, process.env.PASSWORD);
 
         //following will assert dashboard screen
         dashboardScreen.assertDashboardLbl();
@@ -112,7 +144,7 @@ describe('verify the Professional details section', () => {
         sectionScreen.clickOnProfessionalDetailsSection();        
 
         //following will assert the page header of the Section
-        professionalDetailsScreen.assertIdentificationDocumentsPageHeader();
+        professionalDetailsScreen.assertProfessionalDetailsPageHeader();
 
         //following will assert the status of the section
         professionalDetailsScreen.assertSectionStatus();
@@ -136,7 +168,7 @@ describe('verify the Professional details section', () => {
         sectionScreen.clickOnProfessionalDetailsSection();        
 
         //following will assert the page header of the Section
-        professionalDetailsScreen.assertIdentificationDocumentsPageHeader();
+        professionalDetailsScreen.assertProfessionalDetailsPageHeader();
 
         // //following will click on Yes radio button of Professional Membership
         // professionalDetailsScreen.clickOnYesRadioBtn();
@@ -153,14 +185,12 @@ describe('verify the Professional details section', () => {
 
         //following will click on Menu button - hamburger menu icon
         sectionScreen.clickOnMenuBtn();
-        //following will click on Profile menu option
-        sectionScreen.clickOnProfileMenuOption();
 
         //following will click on Right To Work Checks option
         sectionScreen.clickOnProfessionalDetailsSection();        
 
         //following will assert the page header of the Section
-        professionalDetailsScreen.assertIdentificationDocumentsPageHeader();
+        professionalDetailsScreen.assertProfessionalDetailsPageHeader();
 
         //following will assert the status of the section
         professionalDetailsScreen.assertSectionStatus();
@@ -184,7 +214,7 @@ describe('verify the Professional details section', () => {
         sectionScreen.clickOnProfessionalDetailsSection();        
 
         //following will assert the page header of the Section
-        professionalDetailsScreen.assertIdentificationDocumentsPageHeader();
+        professionalDetailsScreen.assertProfessionalDetailsPageHeader();
 
         // //following will click on Yes radio button of Professional Membership
         // professionalDetailsScreen.clickOnYesRadioBtn();
@@ -201,14 +231,12 @@ describe('verify the Professional details section', () => {
 
         //following will click on Menu button - hamburger menu icon
         sectionScreen.clickOnMenuBtn();
-        //following will click on Profile menu option
-        sectionScreen.clickOnProfileMenuOption();
 
         //following will click on Right To Work Checks option
         sectionScreen.clickOnProfessionalDetailsSection();        
 
         //following will assert the page header of the Section
-        professionalDetailsScreen.assertIdentificationDocumentsPageHeader();
+        professionalDetailsScreen.assertProfessionalDetailsPageHeader();
 
         //following will assert the status of the section
         professionalDetailsScreen.assertSectionStatus();
@@ -232,7 +260,7 @@ describe('verify the Professional details section', () => {
         sectionScreen.clickOnProfessionalDetailsSection();        
 
         //following will assert the page header of the Section
-        professionalDetailsScreen.assertIdentificationDocumentsPageHeader();
+        professionalDetailsScreen.assertProfessionalDetailsPageHeader();
 
         // //following will click on Yes radio button of Professional Membership
         // professionalDetailsScreen.clickOnYesRadioBtn();
@@ -249,14 +277,12 @@ describe('verify the Professional details section', () => {
 
         //following will click on Menu button - hamburger menu icon
         sectionScreen.clickOnMenuBtn();
-        //following will click on Profile menu option
-        sectionScreen.clickOnProfileMenuOption();
 
         //following will click on Right To Work Checks option
         sectionScreen.clickOnProfessionalDetailsSection();        
 
         //following will assert the page header of the Section
-        professionalDetailsScreen.assertIdentificationDocumentsPageHeader();
+        professionalDetailsScreen.assertProfessionalDetailsPageHeader();
 
         //following will assert the status of the section
         professionalDetailsScreen.assertSectionStatus();

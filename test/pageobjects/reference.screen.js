@@ -5,7 +5,7 @@ class referenceScreen {
 
     get pageHeaderLbl () { return $('//h1[@id="pageTitle"]')}
 
-    get saveBtn () { return $('//button[@id="saveButton"]')}
+    get saveBtn () { return $('//button[@id="submit-button"]')}
 
     get sectionStatus () { return $('//div[@id="statusMessageHeader"]/span')}
 
@@ -101,28 +101,28 @@ class referenceScreen {
     enterValueForEmail1 () {
         this.refEmail1.waitForExist({timeout: 60000});
         this.refEmail1.scrollIntoView();
-        browser.pause(1000);
+        // browser.pause(100);
         this.refEmail1.setValue("rio@test.com");
     }
     
     enterValueForEmail2 () {
         this.refEmail2.waitForExist({timeout: 60000});
         this.refEmail2.scrollIntoView();
-        browser.pause(1000);
+        // browser.pause(100);
         this.refEmail2.setValue("denver@test.com");
     }
 
     enterValueForEmail3 () {
         this.refEmail3.waitForExist({timeout: 60000});
         this.refEmail3.scrollIntoView();
-        browser.pause(1000);
+        // browser.pause(100);
         this.refEmail3.setValue("tokyp@test.com");
     }
 
     enterValueForEmail4 () {
         this.refEmail4.waitForExist({timeout: 60000});
         this.refEmail4.scrollIntoView();
-        browser.pause(1000);
+        // browser.pause(100);
         this.refEmail4.setValue("nairobi@test.com");
     }
 
@@ -240,38 +240,62 @@ class referenceScreen {
 
     fillOutReference1 () {
         this.enterValueForRefName1();
+        browser.pause(7000);
         this.enterValueForEmail1();
+        browser.pause(7000);
         this.enterValueForJobTitle1();
+        browser.pause(7000);
         this.enterValueForEmployer1();
+        browser.pause(7000);
         this.enterValueForDateFrom1();
+        browser.pause(7000);
         this.enterValueForDateTo1();
+        browser.pause(7000);
     }
     
     fillOutReference2 () {
         this.enterValueForRefName2();
+        browser.pause(7000);
         this.enterValueForEmail2();
+        browser.pause(7000);
         this.enterValueForJobTitle2();
+        browser.pause(7000);
         this.enterValueForEmployer2();
+        browser.pause(7000);
         this.enterValueForDateFrom2();
+        browser.pause(7000);
         this.enterValueForDateTo2();
+        browser.pause(7000);
     }
 
     fillOutReference3 () {
         this.enterValueForRefName3();
+        browser.pause(7000);
         this.enterValueForEmail3();
+        browser.pause(7000);
         this.enterValueForJobTitle3();
+        browser.pause(7000);
         this.enterValueForEmployer3();
+        browser.pause(7000);
         this.enterValueForDateFrom3();
+        browser.pause(7000);
         this.enterValueForDateTo3();
+        browser.pause(7000);
     }
 
     fillOutReference4 () {
         this.enterValueForRefName4();
+        browser.pause(7000);
         this.enterValueForEmail4();
+        browser.pause(7000);
         this.enterValueForJobTitle4();
+        browser.pause(7000);
         this.enterValueForEmployer4();
+        browser.pause(7000);
         this.enterValueForDateFrom4();
+        browser.pause(7000);
         this.enterValueForDateTo4();
+        browser.pause(7000);
     }
 
     clickOnAddAnotherBtn () {

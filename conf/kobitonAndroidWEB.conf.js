@@ -1,7 +1,7 @@
 const {config} = require('./kobitonWDIO.conf')
 
 config.specs = [
-  './test/specs/**/dbsDetails.e2e.js'
+  './test/specs/**/autoSave.e2e.js'
 ]
 
 config.capabilities = [{
@@ -11,9 +11,9 @@ config.capabilities = [{
   captureScreenshots: true,
   browserName:        'chrome',
   deviceGroup:        'KOBITON',
-  deviceName:         'Pixel 3a XL',
+  deviceName:         'Google Pixel 6',
   platformName:       'Android',
-  platformVersion:    '11'
+  platformVersion:    '12'
 }]
 
 exports.config = config

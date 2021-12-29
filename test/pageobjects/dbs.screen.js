@@ -13,13 +13,22 @@ class dbsScreen {
 
     get noRadioBtn () { return $('//section[@id="DBSUpdateRegistered"]/label[2]/span')}
 
+    get yesRadioBtn_value () { return $('//input[@id="DBSUpdateRegistered-DBSUpdateYes"]')}
+
+    get noRadioBtn_value () { return $('//input[@id="DBSUpdateRegistered-DBSUpdateNo"]')}
+
     get dbsQuestionNoRadioBtn () { return $('//section[@id="DBSquestion"]/label[2]/span')}
+
+    get dbsApplicationLbl () { return $('//*[@id="profile-form"]/section/app-field-display/div[7]/section/app-text-component/div/h3')}
+
+    get certificateUploader () { return $('//*[@id="profile-form"]/section/app-field-display/div[9]/section/label/span')}
+    //*[@id="profile-form"]/section/app-field-display/div[9]/section/label/span
 
     get certificateTxtBox () { return $('//input[@id="DBSUpdateCertificateNumber"]')}
 
     get addFileBtn () { return $('//button[@id="add-file-DBSUpdateCertificate"]')}
 
-    get saveAndContinueBtn () { return $('//button[@id="saveButton"]')}
+    get saveAndContinueBtn () { return $('//button[@id="submit-button"]')}
 
     get sectionStatus () { return $('//div[@id="statusMessageHeader"]/span')}
 
@@ -28,6 +37,8 @@ class dbsScreen {
     get allowOpt () {return $('/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout[2]/android.widget.Button[1]')}
     get fileEle () { return $('//*[contains(@text,"Files")]')}
     get eleDoc () { return $('//*[contains(@text,"file.pdf")]')}
+
+    DBS_flag = false;
 
     assertDBSPageHeader () {
         this.pageHeaderLbl.waitForExist({timeout: 60000});
@@ -38,7 +49,7 @@ class dbsScreen {
     clickOnYesRadioBtn () {
         this.yesRadioBtn.waitForExist({timeout:60000});
         this.yesRadioBtn.scrollIntoView();
-        browser.pause(1000);
+        // browser.pause(500);
         this.yesRadioBtn.click();
     }
 
@@ -51,7 +62,38 @@ class dbsScreen {
     clickOnDBSQuestionNoRadioBtn () {
         this.dbsQuestionNoRadioBtn.waitForExist({timeout:60000});
         this.dbsQuestionNoRadioBtn.scrollIntoView();
+        browser.pause(200);
         this.dbsQuestionNoRadioBtn.click();
+    }
+
+    assertDBSApplicationLbl () {
+        if(this.yesRadioBtn_value.isSelected()){
+            // this.dbsApplicationLbl.waitForExist({timeout: 60000});
+            expect(this.dbsApplicationLbl.isDisplayed()).to.equal(false);    
+        }else{
+            this.dbsApplicationLbl.waitForExist({timeout: 60000});
+            expect(this.dbsApplicationLbl.isDisplayed()).to.equal(true);
+        }
+    }
+
+    assertCertificateNumberTxtBox (){
+        if(this.yesRadioBtn_value.isSelected()){
+            this.certificateTxtBox.waitForExist({timeout: 60000});
+            expect(this.certificateTxtBox.isDisplayed()).to.equal(true);
+        }else{
+            // this.certificateTxtBox.waitForExist({timeout: 60000});
+            expect(this.certificateTxtBox.isDisplayed()).to.equal(false);
+        }
+    }
+
+    assertCertificateUploadPanel () {
+        if(this.yesRadioBtn_value.isSelected()){
+            this.certificateUploader.waitForExist({timeout: 60000});
+            expect(this.certificateUploader.isDisplayed()).to.equal(true);
+        }else{
+            // this.certificateUploader.waitForExist({timeout: 60000});
+            expect(this.certificateUploader.isDisplayed()).to.equal(false);
+        }
     }
 
     enterCertificateValue (certificate) {
@@ -119,6 +161,30 @@ class dbsScreen {
     clickOnSaveAndContinueBtn () {
         this.saveAndContinueBtn.waitForExist({timeout:60000});
         this.saveAndContinueBtn.click();
+    }
+
+    switchDBSValue() {
+        this.noRadioBtn_value.waitForExist({timeout: 60000});
+        if(this.noRadioBtn_value.isSelected()){
+            this.yesRadioBtn_value.scrollIntoView();
+            browser.pause(10000);
+            this.yesRadioBtn.click();
+            this.DBS_flag = true;
+        }
+        else{
+            this.noRadioBtn_value.scrollIntoView();
+            browser.pause(10000);
+            this.noRadioBtn.click();
+        }
+    }
+
+    assertDBSValue() {
+        if(this.DBS_flag == true){
+            expect(this.yesRadioBtn_value.isSelected()).to.equal(true);
+        }
+        else{
+            expect(this.noRadioBtn_value.isSelected()).to.equal(true);
+        }
     }
 
     assertDBSDetailsSectionStatus (dbsStatus) {

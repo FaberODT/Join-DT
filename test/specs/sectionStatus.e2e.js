@@ -20,7 +20,7 @@ describe('verify the reference screen of Join-DT', () => {
         browser.url(process.env.E2EPORTAL);
 
         //following will perform login 
-        loginScreen.loginIntoSite(process.env.USER, process.env.PASSWORD);
+        loginScreen.loginIntoSite(process.env.USER1, process.env.PASSWORD);
 
         //following will assert dashboard screen
         dashboardScreen.assertDashboardLbl();

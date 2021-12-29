@@ -25,7 +25,7 @@ describe('verify the Payment options section', () => {
         sectionScreen.clickOnTaxAndNextOfKinSection();
 
         //following will assert that user is on Payment Option screen
-        paymentOptionScreen.assertTaxAndNextOfKinPageHeader();
+        paymentOptionScreen.assertPaymentOptionPageHeader();
     });
 
     afterEach('Logout from the application', () => {
@@ -47,14 +47,14 @@ describe('verify the Payment options section', () => {
 
         //following will click on Menu button - hamburger menu option
         sectionScreen.clickOnMenuBtn();
-        sectionScreen.clickOnProfileMenuOption();
+        // sectionScreen.clickOnProfileMenuOption();
 
         //following will click on Payment options section
         sectionScreen.clickOnTaxAndNextOfKinSection();
         browser.pause(5000);
 
         //following will assert that user is on Payment Option screen
-        paymentOptionScreen.assertTaxAndNextOfKinPageHeader();
+        paymentOptionScreen.assertPaymentOptionPageHeader();
         
         //following will assert the status of the section
         paymentOptionScreen.assertSectionStatus();
@@ -70,14 +70,14 @@ describe('verify the Payment options section', () => {
 
         //following will click on Menu button - hamburger menu option
         sectionScreen.clickOnMenuBtn();
-        sectionScreen.clickOnProfileMenuOption();
+        // sectionScreen.clickOnProfileMenuOption();
 
         //following will click on Payment Option section
         sectionScreen.clickOnTaxAndNextOfKinSection();
         browser.pause(5000);
 
         //following will assert that user is on Payment Option screen
-        paymentOptionScreen.assertTaxAndNextOfKinPageHeader();
+        paymentOptionScreen.assertPaymentOptionPageHeader();
         
         //following will assert the status of the section
         paymentOptionScreen.assertSectionStatus();

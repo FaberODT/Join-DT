@@ -5,7 +5,7 @@ class termsAndConditionScreen {
 
     get pageHeaderLbl () { return $('//h1[@id="pageTitle"]')}
 
-    get saveBtn () { return $('//button[@id="saveButton"]')}
+    get saveBtn () { return $('//button[@id="submit-button"]')}
 
     get sectionStatus () { return $('//div[@id="statusMessageHeader"]/span')}
 

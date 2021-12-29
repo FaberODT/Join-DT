@@ -5,7 +5,7 @@ class professionalDetailsScreen {
 
     get pageHeaderLbl () { return $('//h1[@id="pageTitle"]')}
 
-    get saveBtn () { return $('//button[@id="saveButton"]')}
+    get saveBtn () { return $('//button[@id="submit-button"]')}
 
     get sectionStatus () { return $('//div[@id="statusMessageHeader"]/span')}
 
@@ -54,24 +54,24 @@ class professionalDetailsScreen {
 
     clickOnBACPRadioBtn () {
         this.bacpRadioBtn.waitForExist({timeout: 60000});
-        this.professionalMembershipTxtBox.scrollIntoView();
-        browser.pause(500);
+        this.bacpRadioBtn.scrollIntoView();
+        browser.pause(1000);
         this.bacpRadioBtn.scrollIntoView();
         this.bacpRadioBtn.click();
     }
 
     clickOnHCPCRadioBtn () {
         this.hcpcRadioBtn.waitForExist({timeout: 60000});
-        this.professionalMembershipTxtBox.scrollIntoView();
-        browser.pause(500);
+        this.hcpcRadioBtn.scrollIntoView();
+        browser.pause(1000);
         this.hcpcRadioBtn.scrollIntoView();
         this.hcpcRadioBtn.click();
     }
     
     clickOnOtherRadioBtn () {
         this.otherRadioBtn.waitForExist({timeout: 60000});
-        this.professionalMembershipTxtBox.scrollIntoView();
-        browser.pause(500);
+        this.otherRadioBtn.scrollIntoView();
+        browser.pause(1000);
         this.otherRadioBtn.scrollIntoView();
         this.otherRadioBtn.click();
     }

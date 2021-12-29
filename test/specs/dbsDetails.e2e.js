@@ -1,3 +1,4 @@
+require('dotenv').config();
 const { assert, expect } = require('chai');
 const apiScreen = require('../helper/setupUser');
 const loginScreen = require('../pageobjects/login.screen');
@@ -10,8 +11,8 @@ describe('verify the DBS section', () => {
     afterEach('Logout functions only', () => {
         //following will perform logout operation
         sectionScreen.clickOnMenuBtn();
-        // //following will click on Profile menu option
-        // sectionScreen.clickOnProfileMenuOption();
+        //following will click on Profile menu option
+        sectionScreen.clickOnProfileMenuOption();
 
         //following will click on Logout option
         sectionScreen.clickOnLogoutBtn();
@@ -38,10 +39,10 @@ describe('verify the DBS section', () => {
         browser.pause(10000);
         
         //following will open browser and load the url
-        browser.url("https://dt-e2e.faberodt.com");
+        browser.url(process.env.E2EPORTAL);
 
         //following will perform login 
-        loginScreen.loginIntoSite("fabertester+nimesh01-e2e@gmail.com","Password123");
+        loginScreen.loginIntoSite(process.env.USER, process.env.PASSWORD);
 
         // //following will assert dashboard screen
         dashboardScreen.assertDashboardLbl();
@@ -70,8 +71,8 @@ describe('verify the DBS section', () => {
 
         //following will click on Menu button (Hamburger menu)
         sectionScreen.clickOnMenuBtn();
-        //following will click on Profile menu option
-        sectionScreen.clickOnProfileMenuOption();
+        // //following will click on Profile menu option
+        // sectionScreen.clickOnProfileMenuOption();
 
         //following will click on DBS Details section
         sectionScreen.clickOnDBSDetailsSection();
@@ -82,10 +83,10 @@ describe('verify the DBS section', () => {
 
     it('Verify DBS screen status - updating details, with NO DBS Registered', () => {
         //following will open browser and load the url
-        browser.url("https://dt-e2e.faberodt.com");
+        browser.url(process.env.E2EPORTAL);
 
         //following will perform login 
-        loginScreen.loginIntoSite("fabertester+nimesh01-e2e@gmail.com","Password123");
+        loginScreen.loginIntoSite(process.env.USER, process.env.PASSWORD);
 
         // //following will assert dashboard screen
         dashboardScreen.assertDashboardLbl();
@@ -114,8 +115,8 @@ describe('verify the DBS section', () => {
 
         //following will click on Menu button (Hamburger menu)
         sectionScreen.clickOnMenuBtn();
-        //following will click on Profile menu option
-        sectionScreen.clickOnProfileMenuOption();
+        // //following will click on Profile menu option
+        // sectionScreen.clickOnProfileMenuOption();
 
         //following will click on DBS Details section
         sectionScreen.clickOnDBSDetailsSection();
@@ -126,10 +127,10 @@ describe('verify the DBS section', () => {
 
     it('Verify DBS screen status - Signed for SignDeclarationStatus from admin, section status as Issue - 1', () => {
         //following will open browser and load the url
-        browser.url("https://dt-e2e.faberodt.com");
+        browser.url(process.env.E2EPORTAL);
 
         //following will perform login 
-        loginScreen.loginIntoSite("fabertester+nimesh01-e2e@gmail.com","Password123");
+        loginScreen.loginIntoSite(process.env.USER, process.env.PASSWORD);
 
         // //following will assert dashboard screen
         dashboardScreen.assertDashboardLbl();
@@ -168,6 +169,23 @@ describe('verify the DBS section', () => {
         apiScreen.saveAndContinueDBSSectionAdminSignedWithoutFile();
         browser.pause(10000);
 
+        //following will perform logout operation
+        sectionScreen.clickOnMenuBtn();
+        //following will click on Profile menu option
+        sectionScreen.clickOnProfileMenuOption();
+
+        //following will click on Logout option
+        sectionScreen.clickOnLogoutBtn();
+
+        //following will assert login screen
+        loginScreen.assertLoginScreen();
+
+        //following will perform login 
+        loginScreen.loginIntoSite(process.env.USER, process.env.PASSWORD);
+
+        // //following will assert dashboard screen
+        dashboardScreen.assertDashboardLbl();
+
         //following will click on Menu button (Hamburger menu)
         sectionScreen.clickOnMenuBtn();
         //following will click on Profile menu option
@@ -204,10 +222,10 @@ describe('verify the DBS section', () => {
         browser.pause(10000);
 
         //following will open browser and load the url
-        browser.url("https://dt-e2e.faberodt.com");
+        browser.url(process.env.E2EPORTAL);
 
         //following will perform login 
-        loginScreen.loginIntoSite("fabertester+nimesh01-e2e@gmail.com","Password123");
+        loginScreen.loginIntoSite(process.env.USER, process.env.PASSWORD);
 
         // //following will assert dashboard screen
         dashboardScreen.assertDashboardLbl();
@@ -246,6 +264,23 @@ describe('verify the DBS section', () => {
         apiScreen.saveAndContinueDBSSectionAdminSignedWithoutFile66();
         browser.pause(10000);
 
+        //following will perform logout operation
+        sectionScreen.clickOnMenuBtn();
+        //following will click on Profile menu option
+        sectionScreen.clickOnProfileMenuOption();
+
+        //following will click on Logout option
+        sectionScreen.clickOnLogoutBtn();
+
+        //following will assert login screen
+        loginScreen.assertLoginScreen();
+
+        //following will perform login 
+        loginScreen.loginIntoSite(process.env.USER, process.env.PASSWORD);
+
+        // //following will assert dashboard screen
+        dashboardScreen.assertDashboardLbl();
+
         //following will click on Menu button (Hamburger menu)
         sectionScreen.clickOnMenuBtn();
         //following will click on Profile menu option
@@ -282,10 +317,10 @@ describe('verify the DBS section', () => {
         browser.pause(10000);
 
         //following will open browser and load the url
-        browser.url("https://dt-e2e.faberodt.com");
+        browser.url(process.env.E2EPORTAL);
 
         //following will perform login 
-        loginScreen.loginIntoSite("fabertester+nimesh01-e2e@gmail.com","Password123");
+        loginScreen.loginIntoSite(process.env.USER, process.env.PASSWORD);
 
         // //following will assert dashboard screen
         dashboardScreen.assertDashboardLbl();
@@ -324,6 +359,23 @@ describe('verify the DBS section', () => {
         apiScreen.saveAndContinueDBSSectionAdminSignedWithoutFile55();
         browser.pause(10000);
 
+        //following will perform logout operation
+        sectionScreen.clickOnMenuBtn();
+        //following will click on Profile menu option
+        sectionScreen.clickOnProfileMenuOption();
+
+        //following will click on Logout option
+        sectionScreen.clickOnLogoutBtn();
+
+        //following will assert login screen
+        loginScreen.assertLoginScreen();
+
+        //following will perform login 
+        loginScreen.loginIntoSite(process.env.USER, process.env.PASSWORD);
+
+        // //following will assert dashboard screen
+        dashboardScreen.assertDashboardLbl();
+
         //following will click on Menu button (Hamburger menu)
         sectionScreen.clickOnMenuBtn();
         //following will click on Profile menu option
@@ -360,10 +412,10 @@ describe('verify the DBS section', () => {
         browser.pause(10000);
 
         //following will open browser and load the url
-        browser.url("https://dt-e2e.faberodt.com");
+        browser.url(process.env.E2EPORTAL);
 
         //following will perform login 
-        loginScreen.loginIntoSite("fabertester+nimesh01-e2e@gmail.com","Password123");
+        loginScreen.loginIntoSite(process.env.USER, process.env.PASSWORD);
 
         // //following will assert dashboard screen
         dashboardScreen.assertDashboardLbl();
@@ -402,6 +454,23 @@ describe('verify the DBS section', () => {
         apiScreen.saveAndContinueDBSSectionAdminSignedWithoutFile99();
         browser.pause(10000);
 
+        //following will perform logout operation
+        sectionScreen.clickOnMenuBtn();
+        //following will click on Profile menu option
+        sectionScreen.clickOnProfileMenuOption();
+
+        //following will click on Logout option
+        sectionScreen.clickOnLogoutBtn();
+
+        //following will assert login screen
+        loginScreen.assertLoginScreen();
+
+        //following will perform login 
+        loginScreen.loginIntoSite(process.env.USER, process.env.PASSWORD);
+
+        // //following will assert dashboard screen
+        dashboardScreen.assertDashboardLbl();
+
         //following will click on Menu button (Hamburger menu)
         sectionScreen.clickOnMenuBtn();
         //following will click on Profile menu option
@@ -438,10 +507,10 @@ describe('verify the DBS section', () => {
         browser.pause(10000);
 
         //following will open browser and load the url
-        browser.url("https://dt-e2e.faberodt.com");
+        browser.url(process.env.E2EPORTAL);
 
         //following will perform login 
-        loginScreen.loginIntoSite("fabertester+nimesh01-e2e@gmail.com","Password123");
+        loginScreen.loginIntoSite(process.env.USER, process.env.PASSWORD);
 
         // //following will assert dashboard screen
         dashboardScreen.assertDashboardLbl();
@@ -480,6 +549,23 @@ describe('verify the DBS section', () => {
         apiScreen.saveAndContinueDBSSectionAdminSignedWithoutFile88();
         browser.pause(10000);
 
+        //following will perform logout operation
+        sectionScreen.clickOnMenuBtn();
+        //following will click on Profile menu option
+        sectionScreen.clickOnProfileMenuOption();
+
+        //following will click on Logout option
+        sectionScreen.clickOnLogoutBtn();
+
+        //following will assert login screen
+        loginScreen.assertLoginScreen();
+
+        //following will perform login 
+        loginScreen.loginIntoSite(process.env.USER, process.env.PASSWORD);
+
+        // //following will assert dashboard screen
+        dashboardScreen.assertDashboardLbl();
+
         //following will click on Menu button (Hamburger menu)
         sectionScreen.clickOnMenuBtn();
         //following will click on Profile menu option
@@ -516,10 +602,10 @@ describe('verify the DBS section', () => {
         browser.pause(10000);
         
         //following will open browser and load the url
-        browser.url("https://dt-e2e.faberodt.com");
+        browser.url(process.env.E2EPORTAL);
 
         //following will perform login 
-        loginScreen.loginIntoSite("fabertester+nimesh01-e2e@gmail.com","Password123");
+        loginScreen.loginIntoSite(process.env.USER, process.env.PASSWORD);
 
         // //following will assert dashboard screen
         dashboardScreen.assertDashboardLbl();
@@ -558,6 +644,23 @@ describe('verify the DBS section', () => {
         apiScreen.saveAndContinueDBSSectionAdminSignedWithoutFileComplete();
         browser.pause(10000);
 
+        //following will perform logout operation
+        sectionScreen.clickOnMenuBtn();
+        //following will click on Profile menu option
+        sectionScreen.clickOnProfileMenuOption();
+
+        //following will click on Logout option
+        sectionScreen.clickOnLogoutBtn();
+
+        //following will assert login screen
+        loginScreen.assertLoginScreen();
+
+        //following will perform login 
+        loginScreen.loginIntoSite(process.env.USER, process.env.PASSWORD);
+
+        // //following will assert dashboard screen
+        dashboardScreen.assertDashboardLbl();
+
         //following will click on Menu button (Hamburger menu)
         sectionScreen.clickOnMenuBtn();
         //following will click on Profile menu option
@@ -591,7 +694,7 @@ describe('verify the DBS section', () => {
         browser.pause(10000);
 
         //following will open browser and load the url
-        browser.url("https://dt-e2e.faberodt.com");
+        browser.url(process.env.E2EPORTAL);
 
         apiScreen.getFaberAuthTokenForUser();
         browser.pause(5000);
@@ -608,7 +711,7 @@ describe('verify the DBS section', () => {
         browser.pause(10000);
 
         //following will perform login 
-        loginScreen.loginIntoSite("fabertester+nimesh01-e2e@gmail.com","Password123");
+        loginScreen.loginIntoSite(process.env.USER, process.env.PASSWORD);
 
         //following will assert dashboard screen
         dashboardScreen.assertDashboardLbl();
@@ -616,6 +719,23 @@ describe('verify the DBS section', () => {
         //following will save and continue DBS section with status SIGNED from admin
         apiScreen.saveAndContinueDBSSectionAdminSignedWithFile();
         browser.pause(5000);
+
+        //following will perform logout operation
+        sectionScreen.clickOnMenuBtn();
+        //following will click on Profile menu option
+        sectionScreen.clickOnProfileMenuOption();
+
+        //following will click on Logout option
+        sectionScreen.clickOnLogoutBtn();
+
+        //following will assert login screen
+        loginScreen.assertLoginScreen();
+
+        //following will perform login 
+        loginScreen.loginIntoSite(process.env.USER, process.env.PASSWORD);
+
+        // //following will assert dashboard screen
+        dashboardScreen.assertDashboardLbl();
 
         //following will click on Menu button (Hamburger menu)
         sectionScreen.clickOnMenuBtn();

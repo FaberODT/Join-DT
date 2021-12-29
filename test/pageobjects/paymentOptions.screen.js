@@ -8,7 +8,7 @@ class paymentOptionScreen {
 
     get paymentRadioBtn () { return $$('//section[@id="PwpPaymentMethod"]/label')}
 
-    get saveBtn () { return $('//button[@id="saveButton"]')}
+    get saveBtn () { return $('//button[@id="submit-button"]')}
 
     get sectionStatus () { return $('//div[@id="statusMessageHeader"]/span')}
 

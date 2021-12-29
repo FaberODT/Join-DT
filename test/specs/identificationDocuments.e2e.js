@@ -22,6 +22,22 @@ describe('verify the identification documents section', () => {
     });
 
     it('to verify the details of identification documents section - without name change', () => {
+        //following will generate the acacium token
+        apiScreen.getFaberAuthToken();
+        browser.pause(5000);
+
+        //following will generate the dt tiken
+        apiScreen.getJoinDTAuthToken();
+        browser.pause(5000);
+
+        //following will clear the user profile data
+        apiScreen.deleteUserData();
+        browser.pause(5000);
+
+        //following will import the user profile data
+        apiScreen.updateUserInformation();
+        browser.pause(10000);
+
         //following will open browser and load the url
         browser.url(process.env.E2EPORTAL);
 
@@ -119,6 +135,23 @@ describe('verify the identification documents section', () => {
         apiScreen.saveAndContinueRWCSectionWithChangedName();
         browser.pause(25000);
         
+        //following will assert dashboard screen
+        dashboardScreen.assertDashboardLbl();
+
+        //following will perform logout operation
+        sectionScreen.clickOnMenuBtn();
+        //following will click on Profile menu option
+        sectionScreen.clickOnProfileMenuOption();
+
+        //following will click on Logout button
+        sectionScreen.clickOnLogoutBtn();
+
+        //following will assert login screen
+        loginScreen.assertLoginScreen();
+
+        //following will perform login 
+        loginScreen.loginIntoSite(process.env.USER, process.env.PASSWORD);
+
         //following will assert dashboard screen
         dashboardScreen.assertDashboardLbl();
         

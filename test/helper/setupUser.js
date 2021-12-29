@@ -343,6 +343,8 @@ class apiService {
         .send(dataServices.getRightToWorkChecksInfoWithChangedName())
         .expect(204)
         .end((err, res) => {
+            console.log("Err: " + err);
+            console.log("Res: " + res);
             if(err) return err;
         });
     }

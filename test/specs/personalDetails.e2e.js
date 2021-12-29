@@ -1,15 +1,11 @@
+require('dotenv').config();
 const { assert, expect } = require('chai');
-const apiScreen = require('../helper/setupUser');
 const loginScreen = require('../pageobjects/login.screen');
 const dashboardScreen = require('../pageobjects/dashBoard.screen');
 const sectionScreen = require('../pageobjects/sections.screen');
 const personalDetailScreen = require('../pageobjects/personalDetails.screen');
 
 describe('verify the google browser page', () => {
-    // it('to verify the title of google page', () => {
-    //     browser.url("https://www.google.com");
-    //     expect(browser.getTitle()).to.equal("Google");
-    // });
 
     it('Verify details of Peronal Details section', () => {
         // //following will clear the worker's profile
@@ -25,10 +21,10 @@ describe('verify the google browser page', () => {
         console.log("Worker's profile imported");
 
         // //following will open browser and load the url
-        browser.url("https://e2e.joinpulse.co.uk");
+        browser.url(process.env.E2EPORTAL);
 
         // //following will perform login 
-        loginScreen.loginIntoSite("fabertester+nimesh001-e2e@gmail.com","Password123");
+        loginScreen.loginIntoSite(process.env.USER, process.env.PASSWORD);
 
         // //following will assert dashboard screen
         dashboardScreen.assertDashboardLbl();
@@ -38,7 +34,7 @@ describe('verify the google browser page', () => {
 
         //following will click on Peronal Details section 
         sectionScreen.clickOnPersonalDetailsSection();
-        browser.pause(5000);
+        // browser.pause(5000);
 
         //following assert that user is on Personal Details page
         personalDetailScreen.assertPersonaDetailsPageLbl();

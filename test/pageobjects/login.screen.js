@@ -1,6 +1,7 @@
 const expect = require("chai").expect;
 const DashboardScreen = require('../pageobjects/dashBoard.screen');
 const LoginScreen = require('../pageobjects/login.screen');
+const sectionScreen = require('../pageobjects/sections.screen');
 global.tag = process.argv[3];
 /**
 * object containing all methods, selectors and functionality of login screen
@@ -51,6 +52,40 @@ class loginScreen {
     assertLoginScreen () {
         this.loginBtn.waitForExist({timeout: 60000});
         expect(this.loginBtn.isDisplayed()).to.equal(true);
+    }
+
+    verifyUptoDashBoard () {
+        //following will open browser and load the url
+        browser.url(process.env.E2EPORTAL);
+
+        //following will perform login 
+        this.loginIntoSite(process.env.USER, process.env.PASSWORD);
+
+        //following will assert dashboard screen
+        DashboardScreen.assertDashboardLbl();
+
+        //following will click on Menu button (Hamburger menu icon)
+        sectionScreen.clickOnMenuBtn();
+
+        //following will click on Profile menu option
+        sectionScreen.clickOnProfileMenuOption();
+    }
+
+    verifyUptoDashBoardForSectionStatus () {
+        //following will open browser and load the url
+        browser.url(process.env.E2EPORTAL);
+
+        //following will perform login 
+        this.loginIntoSite(process.env.USER1, process.env.PASSWORD);
+
+        //following will assert dashboard screen
+        DashboardScreen.assertDashboardLbl();
+
+        //following will click on Menu button (Hamburger menu icon)
+        sectionScreen.clickOnMenuBtn();
+
+        //following will click on Profile menu option
+        sectionScreen.clickOnProfileMenuOption();
     }
 }
 
