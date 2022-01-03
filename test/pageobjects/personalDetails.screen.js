@@ -114,7 +114,7 @@ class personalDetailScreen {
     }
 
     assertChangesSavedNotification() {
-        this.notificationEle.waitForExist({timeout: 60000});
+        // this.notificationEle.waitForExist({timeout: 60000});
         // browser.pause(500);
         expect(this.notificationEle.isDisplayed()).to.equal(true);
         browser.pause(8000);

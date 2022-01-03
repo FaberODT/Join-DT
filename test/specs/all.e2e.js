@@ -1619,240 +1619,240 @@ describe('Join Pulse E2E Environment: ', () => {
     /**
      * Following group of test cases will verify the Section status of every sections
      */
-    it('Verify status of the section Personal Details', () => {
-        //following method call will perform login and redirect user on dashboard page
-        loginScreen.verifyUptoDashBoardForSectionStatus();
+    // it('Verify status of the section Personal Details', () => {
+    //     //following method call will perform login and redirect user on dashboard page
+    //     loginScreen.verifyUptoDashBoardForSectionStatus();
 
-        //following will click on Personal Details section
-        sectionScreen.clickOnPersonalDetailsSection();
+    //     //following will click on Personal Details section
+    //     sectionScreen.clickOnPersonalDetailsSection();
 
-        //following will assert the Personal details screen
-        	.assertPersonaDetailsPageLbl();
+    //     //following will assert the Personal details screen
+    //     	.assertPersonaDetailsPageLbl();
 
-        //following will assert the section status of Personal Details section
-        personalDetailsScreen.assertPersonaDetailsPageStatus();
-    });
+    //     //following will assert the section status of Personal Details section
+    //     personalDetailsScreen.assertPersonaDetailsPageStatus();
+    // });
 
-    it('Verify status of the section Interview', () => {
-        //following method call will perform login and redirect user on dashboard page
-        loginScreen.verifyUptoDashBoardForSectionStatus();
+    // it('Verify status of the section Interview', () => {
+    //     //following method call will perform login and redirect user on dashboard page
+    //     loginScreen.verifyUptoDashBoardForSectionStatus();
         
-        //following will click on Interview section
-        sectionScreen.clickOnInterviewSection();
+    //     //following will click on Interview section
+    //     sectionScreen.clickOnInterviewSection();
 
-        //following will assert the Interview details screen
-        interviewDetailsScreen.assertInterviewPageLbl();
+    //     //following will assert the Interview details screen
+    //     interviewDetailsScreen.assertInterviewPageLbl();
 
-        //following will assert the section status of Interview section
-        interviewDetailsScreen.assertInterviewPageStatus();
-    });
+    //     //following will assert the section status of Interview section
+    //     interviewDetailsScreen.assertInterviewPageStatus();
+    // });
 
-    it('Verify status of the section Declaration and DBS', () => {
-        //following method call will perform login and redirect user on dashboard page
-        loginScreen.verifyUptoDashBoardForSectionStatus();
+    // it('Verify status of the section Declaration and DBS', () => {
+    //     //following method call will perform login and redirect user on dashboard page
+    //     loginScreen.verifyUptoDashBoardForSectionStatus();
         
-        //following will click on Declaration and DBS section
-        sectionScreen.clickOnDBSDetailsSection();
+    //     //following will click on Declaration and DBS section
+    //     sectionScreen.clickOnDBSDetailsSection();
 
-        //following will assert the Declaration and DBS screen
-        dbsScreen.assertDBSPageHeader();
+    //     //following will assert the Declaration and DBS screen
+    //     dbsScreen.assertDBSPageHeader();
 
-        //following will assert the section status of Declaration and DBS section
-        dbsScreen.assertDBSDetailsSectionStatus("Complete");
-    });
+    //     //following will assert the section status of Declaration and DBS section
+    //     dbsScreen.assertDBSDetailsSectionStatus("Complete");
+    // });
 
-    it('Verify status of the section Identification document', () => {
-        //following method call will perform login and redirect user on dashboard page
-        loginScreen.verifyUptoDashBoardForSectionStatus();
+    // it('Verify status of the section Identification document', () => {
+    //     //following method call will perform login and redirect user on dashboard page
+    //     loginScreen.verifyUptoDashBoardForSectionStatus();
         
-        //following will click on Identification document section
-        sectionScreen.clickOnIdentificationDocumentSection();
+    //     //following will click on Identification document section
+    //     sectionScreen.clickOnIdentificationDocumentSection();
 
-        //following will assert the Identification document screen
-        identificationDocumentScreen.assertIdentificationDocumentsPageHeader();
+    //     //following will assert the Identification document screen
+    //     identificationDocumentScreen.assertIdentificationDocumentsPageHeader();
 
-        //following will assert the section status of Identification document 
-        identificationDocumentScreen.assertSectionStatus();
-    });
+    //     //following will assert the section status of Identification document 
+    //     identificationDocumentScreen.assertSectionStatus();
+    // });
 
-    it('Verify status of the section Professional details', () => {
-        //following method call will perform login and redirect user on dashboard page
-        loginScreen.verifyUptoDashBoardForSectionStatus();
+    // it('Verify status of the section Professional details', () => {
+    //     //following method call will perform login and redirect user on dashboard page
+    //     loginScreen.verifyUptoDashBoardForSectionStatus();
         
-        //following will click on Professional details section
-        sectionScreen.clickOnProfessionalDetailsSection();
+    //     //following will click on Professional details section
+    //     sectionScreen.clickOnProfessionalDetailsSection();
 
-        //following will assert the Professional details screen
-        professionalDetailsScreen.assertProfessionalDetailsPageHeader();
+    //     //following will assert the Professional details screen
+    //     professionalDetailsScreen.assertProfessionalDetailsPageHeader();
 
-        //following will assert the section status of Professional details
-        professionalDetailsScreen.assertSectionStatus();
-    });
+    //     //following will assert the section status of Professional details
+    //     professionalDetailsScreen.assertSectionStatus();
+    // });
 
-    it('Verify status of the section References', () => {
-        //following method call will perform login and redirect user on dashboard page
-        loginScreen.verifyUptoDashBoardForSectionStatus();
+    // it('Verify status of the section References', () => {
+    //     //following method call will perform login and redirect user on dashboard page
+    //     loginScreen.verifyUptoDashBoardForSectionStatus();
         
-        //following will click on References section
-        sectionScreen.clickOnReferenceSection();
+    //     //following will click on References section
+    //     sectionScreen.clickOnReferenceSection();
 
-        //following will assert the References screen
-        refereneScreen.assertReferencePageHeader();
+    //     //following will assert the References screen
+    //     refereneScreen.assertReferencePageHeader();
 
-        //following will assert the section status of references
-        refereneScreen.assertSectionStatus();
-    });
+    //     //following will assert the section status of references
+    //     refereneScreen.assertSectionStatus();
+    // });
 
-    it('Verify status of the section Training', () => {
-        //following method call will perform login and redirect user on dashboard page
-        loginScreen.verifyUptoDashBoardForSectionStatus();
+    // it('Verify status of the section Training', () => {
+    //     //following method call will perform login and redirect user on dashboard page
+    //     loginScreen.verifyUptoDashBoardForSectionStatus();
         
-        //following will click on Training section
-        sectionScreen.clickOnTrainingSection();
+    //     //following will click on Training section
+    //     sectionScreen.clickOnTrainingSection();
 
-        //following will assert the Training screen
-        trainingScreen.assertTrainingPageHeader();
+    //     //following will assert the Training screen
+    //     trainingScreen.assertTrainingPageHeader();
 
-        //following will assert the section status of Training
-        trainingScreen.assertTrainingSectionStatus();
-    });
+    //     //following will assert the section status of Training
+    //     trainingScreen.assertTrainingSectionStatus();
+    // });
 
-    it('Verify status of the section Payment method', () => {
-        //following method call will perform login and redirect user on dashboard page
-        loginScreen.verifyUptoDashBoardForSectionStatus();
+    // it('Verify status of the section Payment method', () => {
+    //     //following method call will perform login and redirect user on dashboard page
+    //     loginScreen.verifyUptoDashBoardForSectionStatus();
         
-        //following will click on Payment method section
-        sectionScreen.clickOnPaymentMethodSection();
+    //     //following will click on Payment method section
+    //     sectionScreen.clickOnPaymentMethodSection();
 
-        //following will assert the Payment method screen
-        paymentMethodScreen.assertPaymentOptionPageHeader();
+    //     //following will assert the Payment method screen
+    //     paymentMethodScreen.assertPaymentOptionPageHeader();
 
-        //following will assert the section status of Payment method
-        paymentMethodScreen.assertSectionStatus();
-    });
+    //     //following will assert the section status of Payment method
+    //     paymentMethodScreen.assertSectionStatus();
+    // });
 
-    it('Verify status of the section Terms and Conditions', () => {
-        //following method call will perform login and redirect user on dashboard page
-        loginScreen.verifyUptoDashBoardForSectionStatus();
+    // it('Verify status of the section Terms and Conditions', () => {
+    //     //following method call will perform login and redirect user on dashboard page
+    //     loginScreen.verifyUptoDashBoardForSectionStatus();
         
-        //following will click on Terms and Conditions section
-        sectionScreen.clickOnTermsSndConditionsSection();
+    //     //following will click on Terms and Conditions section
+    //     sectionScreen.clickOnTermsSndConditionsSection();
 
-        //following will assert the Terms and Conditions screen
-        termsAndConditionScreen.assertTermsAndConditionsPageHeader();
+    //     //following will assert the Terms and Conditions screen
+    //     termsAndConditionScreen.assertTermsAndConditionsPageHeader();
 
-        //following will assert the section status of Terms and Conditions
-        termsAndConditionScreen.assertSectionStatus();
-    });
+    //     //following will assert the section status of Terms and Conditions
+    //     termsAndConditionScreen.assertSectionStatus();
+    // });
 
-    /**
-     * Following group of test cases will verify the References section screen
-     */
-    it('Verify details of Reference section with 2 References', () => {
-        //following method call will perform login and redirect user on dashboard page
-        loginScreen.verifyUptoDashBoard();
+    // /**
+    //  * Following group of test cases will verify the References section screen
+    //  */
+    // it('Verify details of Reference section with 2 References', () => {
+    //     //following method call will perform login and redirect user on dashboard page
+    //     loginScreen.verifyUptoDashBoard();
 
-        //following will click on Peronal Details section 
-        sectionScreen.clickOnReferenceSection();
-        browser.pause(5000);
+    //     //following will click on Peronal Details section 
+    //     sectionScreen.clickOnReferenceSection();
+    //     browser.pause(5000);
 
-        //following will assert the section heading of Reference section
-        refereneScreen.assertReferencePageHeader();
+    //     //following will assert the section heading of Reference section
+    //     refereneScreen.assertReferencePageHeader();
 
-        //following will fill out fileds of Reference 1
-        refereneScreen.fillOutReference1();
+    //     //following will fill out fileds of Reference 1
+    //     refereneScreen.fillOutReference1();
 
-        //following will fill out fields of Reference 2
-        refereneScreen.fillOutReference2();
+    //     //following will fill out fields of Reference 2
+    //     refereneScreen.fillOutReference2();
 
-        //following will click on Save and Continue button
-        refereneScreen.clickOnSaveAndContinueBtn();
-        browser.pause(5000);
+    //     //following will click on Save and Continue button
+    //     refereneScreen.clickOnSaveAndContinueBtn();
+    //     browser.pause(5000);
 
-        //following will click on Menu button (hamburger menu)
-        sectionScreen.clickOnMenuBtn();
-        // sectionScreen.clickOnProfileMenuOption();
+    //     //following will click on Menu button (hamburger menu)
+    //     sectionScreen.clickOnMenuBtn();
+    //     // sectionScreen.clickOnProfileMenuOption();
 
-        //following will click on Peronal Details section 
-        sectionScreen.clickOnReferenceSection();
-        browser.pause(5000);
+    //     //following will click on Peronal Details section 
+    //     sectionScreen.clickOnReferenceSection();
+    //     browser.pause(5000);
 
-        //following will assert the section heading of Reference section
-        refereneScreen.assertReferencePageHeader();
+    //     //following will assert the section heading of Reference section
+    //     refereneScreen.assertReferencePageHeader();
 
-        //following will assert status of the References page
-        refereneScreen.assertSectionStatus();
-    });
+    //     //following will assert status of the References page
+    //     refereneScreen.assertSectionStatus();
+    // });
 
-    it('Verify details of Reference section with 3 References', () => {
-        //following method call will perform login and redirect user on dashboard page
-        loginScreen.verifyUptoDashBoard();
+    // it('Verify details of Reference section with 3 References', () => {
+    //     //following method call will perform login and redirect user on dashboard page
+    //     loginScreen.verifyUptoDashBoard();
 
-        //following will click on Peronal Details section 
-        sectionScreen.clickOnReferenceSection();
-        browser.pause(5000);
+    //     //following will click on Peronal Details section 
+    //     sectionScreen.clickOnReferenceSection();
+    //     browser.pause(5000);
 
-        //following will assert the section heading of Reference section
-        refereneScreen.assertReferencePageHeader();
+    //     //following will assert the section heading of Reference section
+    //     refereneScreen.assertReferencePageHeader();
 
-        //following will click on "Add another" button
-        refereneScreen.clickOnAddAnotherBtn();
+    //     //following will click on "Add another" button
+    //     refereneScreen.clickOnAddAnotherBtn();
 
-        //following will fill out fields of Reference 3
-        refereneScreen.fillOutReference3();
+    //     //following will fill out fields of Reference 3
+    //     refereneScreen.fillOutReference3();
 
-        //following will click on Save and Continue button
-        refereneScreen.clickOnSaveAndContinueBtn();
-        browser.pause(5000);
+    //     //following will click on Save and Continue button
+    //     refereneScreen.clickOnSaveAndContinueBtn();
+    //     browser.pause(5000);
 
-        //following will click on Menu button (hamburger menu)
-        sectionScreen.clickOnMenuBtn();
-        // sectionScreen.clickOnProfileMenuOption();
+    //     //following will click on Menu button (hamburger menu)
+    //     sectionScreen.clickOnMenuBtn();
+    //     // sectionScreen.clickOnProfileMenuOption();
 
-        //following will click on Peronal Details section 
-        sectionScreen.clickOnReferenceSection();
-        browser.pause(5000);
+    //     //following will click on Peronal Details section 
+    //     sectionScreen.clickOnReferenceSection();
+    //     browser.pause(5000);
 
-        //following will assert the section heading of Reference section
-        refereneScreen.assertReferencePageHeader();
+    //     //following will assert the section heading of Reference section
+    //     refereneScreen.assertReferencePageHeader();
 
-        //following will assert status of the References page
-        refereneScreen.assertSectionStatus();
-    });
+    //     //following will assert status of the References page
+    //     refereneScreen.assertSectionStatus();
+    // });
 
-    it('Verify details of Reference section with 4 References', () => {
-        //following method call will perform login and redirect user on dashboard page
-        loginScreen.verifyUptoDashBoard();
+    // it('Verify details of Reference section with 4 References', () => {
+    //     //following method call will perform login and redirect user on dashboard page
+    //     loginScreen.verifyUptoDashBoard();
 
-        //following will click on Peronal Details section 
-        sectionScreen.clickOnReferenceSection();
-        browser.pause(5000);
+    //     //following will click on Peronal Details section 
+    //     sectionScreen.clickOnReferenceSection();
+    //     browser.pause(5000);
 
-        //following will assert the section heading of Reference section
-        refereneScreen.assertReferencePageHeader();
+    //     //following will assert the section heading of Reference section
+    //     refereneScreen.assertReferencePageHeader();
 
-        //following will click on "Add another" button
-        refereneScreen.clickOnAddAnotherBtn();
+    //     //following will click on "Add another" button
+    //     refereneScreen.clickOnAddAnotherBtn();
 
-        //following will fill out fields of Reference 4
-        refereneScreen.fillOutReference4();
+    //     //following will fill out fields of Reference 4
+    //     refereneScreen.fillOutReference4();
 
-        //following will click on Save and Continue button
-        refereneScreen.clickOnSaveAndContinueBtn();
-        browser.pause(5000);
+    //     //following will click on Save and Continue button
+    //     refereneScreen.clickOnSaveAndContinueBtn();
+    //     browser.pause(5000);
 
-        //following will click on Menu button (hamburger menu)
-        sectionScreen.clickOnMenuBtn();
-        // sectionScreen.clickOnProfileMenuOption();
+    //     //following will click on Menu button (hamburger menu)
+    //     sectionScreen.clickOnMenuBtn();
+    //     // sectionScreen.clickOnProfileMenuOption();
 
-        //following will click on Peronal Details section 
-        sectionScreen.clickOnReferenceSection();
-        browser.pause(5000);
+    //     //following will click on Peronal Details section 
+    //     sectionScreen.clickOnReferenceSection();
+    //     browser.pause(5000);
 
-        //following will assert the section heading of Reference section
-        refereneScreen.assertReferencePageHeader();
+    //     //following will assert the section heading of Reference section
+    //     refereneScreen.assertReferencePageHeader();
 
-        //following will assert status of the References page
-        refereneScreen.assertSectionStatus();
-    });
+    //     //following will assert status of the References page
+    //     refereneScreen.assertSectionStatus();
+    // });
 });
