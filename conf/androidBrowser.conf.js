@@ -1,5 +1,4 @@
 const {config} = require('./mobileBrowserWDIO.conf');
-const androidInfo = require('./android.info');
 
 // appium capabilities
 config.capabilities = [
